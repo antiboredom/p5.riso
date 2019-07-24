@@ -6,7 +6,7 @@ Please note: this library is pre-alpha, and likely to change!
 
 ## Documentation
 
-- To do!
+- Coming Soon!
 
 ## Notes to self:
 
