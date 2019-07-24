@@ -6,7 +6,14 @@ Please note: this library is pre-alpha, and likely to change!
 
 ## Documentation
 
-- Coming Soon!
+- How to use the Risograph printer
+        The What And Why?
+        How to “install” it / enable it for use
+        List of existing functions
+        Explanations of what each function does
+        Sketch Examples
+        Link to GitHub account
+
 
 ## Notes to self:
 
