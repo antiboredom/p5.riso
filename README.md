@@ -84,9 +84,9 @@ Using:
 
 - Local Editors (such as Sublime)
 	- Download our source code and save it in the same folder where you keep your local .js files.
-	- On your html file used to run the .js code, insert the following 2 lines under <head>:
-		- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.js"></script>
+	- On your html file used to run the .js code, insert the following line under <head>:
     	- <script src="../../lib/p5.riso.js"></script>
+    		- This should contain the path to the file on your computer 
 
 ## Sketch Examples
 
