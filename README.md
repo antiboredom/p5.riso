@@ -66,9 +66,9 @@ Example: var blue = new Riso(“blue”, width, height);
 - [2 parameters:]
 1. Image object
 1. Number corresponding to the Color Channel
-	0 = red
-	1 = green
-	2 = blue
+	- 0 = red
+	- 1 = green
+	- 2 = blue
 
 **cutout( )**
 - Allows you to cut out a certain object out of a color layer so that the colors don’t mix
