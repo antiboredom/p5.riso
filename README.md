@@ -77,16 +77,24 @@ How to use the Risograph Printer:
 ## How to “install” it / enable it for use
 Using:
 - OpenProcessing
- 	- Create a new tab by clicking the '+' button next to the mySketch tab. Copy & Paste our source code there. 
- 	- You can also fork one of our sample sketches below (made on OpenProcessing) and work from there!
-
-- p5.js Web Editor
+ 	- Create a new tab by clicking the '+' button next to the mySketch tab. 
+	- Copy & Paste our [source code](https://raw.githubusercontent.com/antiboredom/p5.riso/master/lib/p5.riso.js) into your new tab
+ 	- You can also fork one of our sample sketches (made on OpenProcessing) and work from there!
 
 - Local Editors (such as Sublime)
 	- Download our source code and save it in the same folder where you keep your local .js files.
 	- On your html file used to run the .js code, insert the following line under <head>:
     	- <script src="../../lib/p5.riso.js"></script>
     	* This should contain the path to the file on your computer 
+
+- p5.js Web Editor
+	- Click the grey '>' button under the pink play button on the top left
+	- Add a new file to your sketch by clicking the '▼' button. We suggest calling it p5.riso.js
+	- Copy & Paste our [source code](https://raw.githubusercontent.com/antiboredom/p5.riso/master/lib/p5.riso.js) into your new file
+	- Click on the index.html file on the sidebar
+	- add the line of code below under <head>: 
+	- <script src="p5.riso.js"></script>
+
 
 ## Sketch Examples
 
