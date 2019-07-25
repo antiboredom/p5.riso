@@ -23,7 +23,7 @@ How to use the Risograph Printer:
 2. Width
 3. Height 
 - Example: *var blue = new Riso(“blue”, width, height);*
-	- Here we create a blue color layer. The order which you create colors layers affects the composition of the canvas and how colors mix. If you top layer (created last) has opacity of 255, you will not be able to see the layers underneath. It is also important to keep in mind that a red layer on top of a blue layer looks different than a blue layer on top of a red layer. This is true for different color combinations, but these particular examples will turn out to be different shades of purple.
+	- Here we create a blue color layer. The order which you create colors layers affects the composition of the canvas and how colors mix. If your top layer (created last) has opacity of 255, you will not be able to see the layers underneath. It is also important to keep in mind that a red layer on top of a blue layer looks different than a blue layer on top of a red layer. This is true for different color combinations, but these particular examples will turn out to be different shades of purple.
 
 **Fill**
 - *riso.fill( );*
@@ -71,7 +71,7 @@ How to use the Risograph Printer:
 	- 2 = blue
 
 **cutout( )**
-- Allows you to cut out a certain object out of a color layer so that the colors don’t mix
+- Allows you to cut out a certain Graphic Object out of a color layer so that the colors don’t mix. That object could be on another Riso color layer or even a text you created using the createGraphics() method. 
 
 
 ## How to “install” it / enable it for use
@@ -82,7 +82,7 @@ Using:
  	- You can also fork one of our sample sketches (made on OpenProcessing) and work from there!
 
 - Local Editors (such as Sublime)
-	- Download our source code and save it in the same folder where you keep your local .js files.
+	- Download our [source code](https://raw.githubusercontent.com/antiboredom/p5.riso/master/lib/p5.riso.js) and save it in the same folder where you keep your local .js files.
 	- On your html file used to run the .js code, insert the following line under `<head>`:
     	`<<script src="../../lib/p5.riso.js"></script> >`
     	* This should contain the path to the file on your computer 
@@ -97,6 +97,17 @@ Using:
 
 
 ## Sketch Examples
+**Basic Layering**
+- https://www.openprocessing.org/sketch/735487 (Ellipse Cutout - rm cutout)
+**Cutout**
+- https://www.openprocessing.org/sketch/735487 (Ellipse Cutout)
+**Images + text + cutout**
+- https://www.openprocessing.org/sketch/735496 (Marilyn)
+**Animation**
+- https://www.openprocessing.org/sketch/736204 (Flying Circles)
+- https://www.openprocessing.org/sketch/736394 (Lindenmayer)
+**Capture**
+- https://www.openprocessing.org/sketch/736456 (Capture Video in a color layer)
 
 ## Notes to self:
 
