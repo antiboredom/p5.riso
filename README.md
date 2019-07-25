@@ -18,6 +18,7 @@ How to use the Risograph Printer:
 
 **Riso Object**
 - The Riso object is a color layer. It takes 3 parameters:
+
 	1. Color
 	2. Width
 	3. Height 
@@ -39,6 +40,7 @@ How to use the Risograph Printer:
 **Image**
 - *riso.image(img, x, y, width, height);*
 - Takes in 5 parameters:
+
 	1. Which image to display on the layer
 	1. x-position
 	1. y-position
@@ -63,6 +65,7 @@ How to use the Risograph Printer:
 **extractRGBChannel( )**
 - Allows you to extract a certain color channel from an image
 - Takes in 2 parameters:
+
 	1. Image object
 	1. Color channel
 		1. 0 = red
