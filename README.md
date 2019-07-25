@@ -65,10 +65,10 @@ Example: var blue = new Riso(“blue”, width, height);
 - Allows you to extract a certain color channel from an image
 - [2 parameters:]
 1. Image object
-1. Color channel
-	1. 0 = red
-	1. 1 = green
-	1. 2 = blue
+1. Number corresponding to the Color Channel
+	0 = red
+	1 = green
+	2 = blue
 
 **cutout( )**
 - Allows you to cut out a certain object out of a color layer so that the colors don’t mix
