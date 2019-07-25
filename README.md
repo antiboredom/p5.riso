@@ -86,7 +86,7 @@ Using:
 	- Download our source code and save it in the same folder where you keep your local .js files.
 	- On your html file used to run the .js code, insert the following line under <head>:
     	- <script src="../../lib/p5.riso.js"></script>
-    		- This should contain the path to the file on your computer 
+    	* This should contain the path to the file on your computer 
 
 ## Sketch Examples
 
