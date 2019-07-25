@@ -17,13 +17,13 @@ How to use the Risograph Printer:
 ## Documentation
 
 **Riso Object**
-- The Riso object is a color layer. It takes 3 parameters:
-
-	1. Color
-	2. Width
-	3. Height 
-	Example: var blue = new Riso(“blue”, width, height);
-	- Here we create a blue color layer. The order which you create colors layers affects the composition of the canvas and how colors mix. If you top layer (created last) has opacity of 255, you will not be able to see the layers underneath. It is also important to keep in mind that a red layer on top of a blue layer looks different than a blue layer on top of a red layer. This is true for different color combinations, but these particular examples will turn out to be different shades of purple.
+- The Riso object is a color layer. 
+- [3 parameters:]
+1. Color
+2. Width
+3. Height 
+Example: var blue = new Riso(“blue”, width, height);
+- Here we create a blue color layer. The order which you create colors layers affects the composition of the canvas and how colors mix. If you top layer (created last) has opacity of 255, you will not be able to see the layers underneath. It is also important to keep in mind that a red layer on top of a blue layer looks different than a blue layer on top of a red layer. This is true for different color combinations, but these particular examples will turn out to be different shades of purple.
 
 **Fill**
 - *riso.fill( );*
@@ -39,13 +39,12 @@ How to use the Risograph Printer:
 
 **Image**
 - *riso.image(img, x, y, width, height);*
-- Takes in 5 parameters:
-
-	1. Which image to display on the layer
-	1. x-position
-	1. y-position
-	1. width
-	1. height
+- [5 parameters:]
+1. Which image to display on the layer
+1. x-position
+1. y-position
+1. width
+1. height
 
 **drawRiso( )**
 - Displays all Riso objects. Should be used at the end of your draw.
@@ -64,13 +63,12 @@ How to use the Risograph Printer:
 
 **extractRGBChannel( )**
 - Allows you to extract a certain color channel from an image
-- Takes in 2 parameters:
-
-	1. Image object
-	1. Color channel
-		1. 0 = red
-		1. 1 = green
-		1. 2 = blue
+- [2 parameters:]
+1. Image object
+1. Color channel
+	1. 0 = red
+	1. 1 = green
+	1. 2 = blue
 
 **cutout( )**
 - Allows you to cut out a certain object out of a color layer so that the colors don’t mix
