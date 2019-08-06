@@ -98,6 +98,15 @@ body {
   margin-left: 185px;
 }
 
+#title_credits {
+  background-color: rgb(0, 0, 0);
+  width: 100px;
+  padding: 10px;
+  font-size: 22px;
+  color: white;
+  margin-left: 185px;
+}
+
 #K:hover {
   color: white;
   background-color: #000000;
@@ -420,7 +429,7 @@ idea behind it:
     text-align: left;
   }
 
-  #title_start, #title_ex, #title_ref {
+  #title_start, #title_ex, #title_ref, #title_credits {
     margin-left: 0;
   }
   .nav-wrapper li {
