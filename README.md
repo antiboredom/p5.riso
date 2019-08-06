@@ -2,7 +2,7 @@
 
 A p5 library for risograph printing by Sam Lavigne and Tega Brain.
 
-Please note: this library is pre-alpha, and likely to change!
+Please note: this library is pre-alpha, and likely to change! See [the documentation here](https://antiboredom.github.io/p5.riso)
 
 ## Risograph Printer
 
