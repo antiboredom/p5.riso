@@ -4,241 +4,236 @@
 * @Last Modified by:   Paolla
 * @Last Modified time: 2019-08-05 16:59:08
 */
-.body {
-    color: white;
-    margin-left: 100px;
+body {
+  font-family: Georgia, sans-serif;
 }
 
 .section {
-    display: inline-block;
+  display: inline-block;
 }
 
 .text1 {
-    /*position: absolute;*/
-    display: inline-block;
-    /*background: white;*/
-    top: 130px;
-    margin-left: 300px;
-    line-height: 30px;
-    width: 500px;
-    height: 180px;
-    padding: 10px;
+  /*position: absolute;*/
+  display: inline-block;
+  /*background: white;*/
+  top: 130px;
+  margin-left: 300px;
+  line-height: 30px;
+  width: 500px;
+  height: 180px;
+  padding: 10px;
 }
 
 .text2 {
-    display: inline-block;
-    /*background: white;*/
-    top: 530px;
-    margin-left: 300px;
-    line-height: 30px;
-    padding-left: 20px;
+  display: inline-block;
+  /*background: white;*/
+  top: 530px;
+  margin-left: 300px;
+  line-height: 30px;
+  padding-left: 20px;
 }
 
 .text3 {
-    /*position: absolute;*/
-    display: inline-block;
-    /*background: white;*/
-    top: 150px;
-    margin-left: 300px;
-    line-height: 30px;
-    width: 500px;
-    padding: 20px;
+  /*position: absolute;*/
+  display: inline-block;
+  /*background: white;*/
+  top: 150px;
+  margin-left: 300px;
+  line-height: 30px;
+  width: 500px;
+  padding: 20px;
 }
 
-
 .nav-wrapper li {
-    font-weight: bold;
-    display: inline;
-    padding: 60px;
+  font-weight: bold;
+  display: inline;
+  padding: 60px;
 }
 
 .nav-wrapper a {
-    color: black;
-    text-decoration: none;
-    padding: 10px;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
 }
 
 #C:hover {
-    background-color: rgb(0, 120, 191);
-    color: white;
+  background-color: rgb(0, 120, 191);
+  color: white;
 }
 
 #title_start {
-    background-color: rgb(0, 120, 191);
-    width: 100px;
-    padding: 10px;
-    font-size: 22px;
-    color: white;
-    margin-left: 185px;
+  background-color: rgb(0, 120, 191);
+  width: 100px;
+  padding: 10px;
+  font-size: 22px;
+  color: white;
+  margin-left: 185px;
 }
 
 #M:hover {
-    background-color: rgb(255, 102, 94);
-    color: white;
+  background-color: rgb(255, 102, 94);
+  color: white;
 }
 
 #title_ref {
-    background-color: rgb(255, 102, 94);
-    width: 100px;
-    padding: 10px;
-    font-size: 22px;
-    color: white;
-    margin-left: 185px;
+  background-color: rgb(255, 102, 94);
+  width: 100px;
+  padding: 10px;
+  font-size: 22px;
+  color: white;
+  margin-left: 185px;
 }
 
 #Y:hover {
-    background-color: rgb(0, 169, 92);
-    color: white;
+  background-color: rgb(0, 169, 92);
+  color: white;
 }
 
 #title_ex {
-    background-color: rgb(0, 169, 92);
-    width: 100px;
-    padding: 10px;
-    font-size: 22px;
-    color: white;
-    margin-left: 185px;
+  background-color: rgb(0, 169, 92);
+  width: 100px;
+  padding: 10px;
+  font-size: 22px;
+  color: white;
+  margin-left: 185px;
 }
 
 #K:hover {
-    color: white;
-    background-color: #000000;
+  color: white;
+  background-color: #000000;
 }
 
-
 #get {
-    background-color: white;
-    padding: 50px 20px;
+  background-color: white;
+  padding: 50px 20px;
 }
 
 #ref {
-    background-color: white;
-    padding: 50px 20px;
+  background-color: white;
+  padding: 50px 20px;
 }
 
 #ex {
-    background-color: white;
-    padding: 50px 20px;
+  background-color: white;
+  padding: 50px 20px;
 }
 
 #src {
-    background-color: white;
-    padding: 50px 20px;
+  background-color: white;
+  padding: 50px 20px;
 }
 
 #title {
-    text-align: center;
-    font-weight: bold;
-    padding: 10px;
-    width: 300px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  width: 300px;
 }
 
 #icon {
-    width: 320px;
-/*    position: absolute;
+  width: 320px;
+  /*    position: absolute;
     right: 60px;
-*/    margin-bottom: -80px;
+*/
+  margin-bottom: -80px;
 }
 
 nav {
-    text-align: center;
-    /*background-color: #8080ff;*/
-    background-color: white;
-    /*FIXED: user can always see the navigation bar while they scroll through the website*/
-    position: fixed;
-    width: 100%;
-    z-index: 1;
+  text-align: center;
+  /*background-color: #8080ff;*/
+  background-color: white;
+  /*FIXED: user can always see the navigation bar while they scroll through the website*/
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 img {
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 200px;
-    height: 200px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 200px;
+  height: 200px;
 }
 
 table {
-    position: absolute;
-    display: inline-block;
-    background: white;
-    top: 870px;
-    margin-left: 100px;
-    line-height: 30px;
-    width: 500px;
-    padding-left: 20px;
+  position: absolute;
+  display: inline-block;
+  background: white;
+  top: 870px;
+  margin-left: 100px;
+  line-height: 30px;
+  width: 500px;
+  padding-left: 20px;
 }
 
 #op:hover {
-    color: rgb(0, 120, 191);
-    border-bottom-style: dashed;
+  color: rgb(0, 120, 191);
+  border-bottom-style: dashed;
 }
 
 #lc:hover {
-    color: rgb(0, 120, 191);
-    border-bottom-style: dashed;
+  color: rgb(0, 120, 191);
+  border-bottom-style: dashed;
 }
 
 #we:hover {
-    color: rgb(0, 120, 191);
-    border-bottom-style: dashed;
+  color: rgb(0, 120, 191);
+  border-bottom-style: dashed;
 }
 
 #openPro {
-    display: none;
+  display: none;
 }
 
 #localIns {
-    display: none;
+  display: none;
 }
 
 #p5Ins {
-    display: none;
+  display: none;
 }
 
 button {
-    border: none;
-    font-size: 13pt;
-    font-family: serif;
+  border: none;
+  font-size: 13pt;
 }
 
-
 .title {
-    font-family: sans-serif;
-    font-size: 54px;
-    color: darkorange;
+  font-size: 54px;
+  color: darkorange;
 }
 
 /*on my html file, divs defined as a container class contain image + text*/
 .container {
-    position: relative;
-    /*relative to its normal position */
-    width: 200px;
-    height: 200px;
-    display: inline-block;
+  position: relative;
+  /*relative to its normal position */
+  width: 200px;
+  height: 200px;
+  display: inline-block;
 }
 
 /*making all images the same size*/
 .image {
-    display: block;
- 
-    width: 200px;
-    height: 200px;
+  display: block;
+
+  width: 200px;
+  height: 200px;
 }
 
 /*GENERIC OVERLAY CLASS -- applied to all images*/
 .overlay {
-    /*positioned relative to the nearest positioned ancestor*/
-    position: absolute;
-    transition: all 0.3s ease;
-    /*making initial overlay completely clear*/
-    opacity: 0;
-    background-color: purple;
+  /*positioned relative to the nearest positioned ancestor*/
+  position: absolute;
+  transition: all 0.3s ease;
+  /*making initial overlay completely clear*/
+  opacity: 0;
+  background-color: purple;
 }
 
 .container:hover .overlay {
-    /*once you hover over image, one can see the overlay*/
-    /*if you change the transition time on line 27 to 3s -- you can see the opacity slowly changing*/
-    opacity: 0.9;
+  /*once you hover over image, one can see the overlay*/
+  /*if you change the transition time on line 27 to 3s -- you can see the opacity slowly changing*/
+  opacity: 0.9;
 }
 
 /*SPECIFIC OVERLAY CLASSES - FADE, LEFT, RIGHT, TOP, BOTTOM, and CROSS*/
@@ -252,13 +247,13 @@ idea behind it:
 .container:hover class we set opacity to 1
 */
 .overlayFade {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    /*right click on element >> inspect >> click on backgorund-color >> change opacity*/
-    /*background-color: #9c27b075;*/
-    background-color: white;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /*right click on element >> inspect >> click on backgorund-color >> change opacity*/
+  /*background-color: #9c27b075;*/
+  background-color: white;
 }
 
 /*LEFT OVERLAY*/
@@ -269,11 +264,11 @@ idea behind it:
 - width is set to 100% once you hover over image and gradually moves from left --> right
 */
 .overlayLeft {
-    height: 100%;
-    width: 0;
-    top: 0;
-    left: 0;
-    background-color: purple;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  background-color: purple;
 }
 
 /*RIGHT OVERLAY*/
@@ -284,18 +279,18 @@ idea behind it:
 - width is set to 100% once you hover over image and gradually moves from right --> left
 */
 .overlayRight {
-    height: 100%;
-    width: 0;
-    top: 0;
-    right: 0;
-    background-color: purple;
+  height: 100%;
+  width: 0;
+  top: 0;
+  right: 0;
+  background-color: purple;
 }
 
 /* LEFT & RIGHT HOVER EFFECT*/
 
 .container:hover .overlayLeft,
 .container:hover .overlayRight {
-    width: 100%;
+  width: 100%;
 }
 
 /*OVERLAY TOP*/
@@ -306,11 +301,11 @@ idea behind it:
 - height is set to 100% once you hover over image and gradually moves from top --> bottom
 */
 .overlayTop {
-    height: 0;
-    width: 100%;
-    top: 0;
-    right: 0;
-    background-color: purple;
+  height: 0;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-color: purple;
 }
 
 /*OVERLAY BOTTOM*/
@@ -321,18 +316,18 @@ idea behind it:
 - height is set to 100% once you hover over image and gradually moves from bottom --> top
 */
 .overlayBottom {
-    height: 0;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    background-color: purple;
+  height: 0;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: purple;
 }
 
 /* TOP & BOTTOM HOVER EFFECT*/
 
 .container:hover .overlayTop,
 .container:hover .overlayBottom {
-    height: 100%;
+  height: 100%;
 }
 
 /*OVERLAY CROSS*/
@@ -343,66 +338,95 @@ idea behind it:
 - width and height are set to 100% once you hover over image and gradually moves across the image
 */
 .overlayCross {
-    height: 0;
-    width: 0;
-    top: 0;
-    left: 0;
-    background-color: purple;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  background-color: purple;
 }
 
 /*HOVER EFFECT*/
 
 .container:hover .overlayCross {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /*text that shows up when you hover over image*/
 .text {
-    color: black;
-    font-family: sans-serif;
-    /*ABSOLUTE: positioned relative to the nearest positioned ancestor*/
-    position: absolute;
-    /*center-aligning the text*/
-    top: 50%;
-    left: 50%;
-    /*TRANSFORM: repositions an element in the horizontal and/or vertical directions*/
-    /*property moving text in the negative direction of x and y*/
-    /*here, it repositions the text, "animating" it according to the motion the overlay*/
-    /*this can be seen better if you change the transition time on line 27 to 2s -- you can see the text moving slowly*/
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    text-align: center;
+  color: black;
+  /*ABSOLUTE: positioned relative to the nearest positioned ancestor*/
+  position: absolute;
+  /*center-aligning the text*/
+  top: 50%;
+  left: 50%;
+  /*TRANSFORM: repositions an element in the horizontal and/or vertical directions*/
+  /*property moving text in the negative direction of x and y*/
+  /*here, it repositions the text, "animating" it according to the motion the overlay*/
+  /*this can be seen better if you change the transition time on line 27 to 2s -- you can see the text moving slowly*/
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  text-align: center;
 }
 #ref_table {
-    display: flex;
-    flex-wrap: wrap;
-    width: 65%;
-    
+  display: flex;
+  flex-wrap: wrap;
+  width: 65%;
 }
 #ref_table div {
-    width: 240px;
-    color:rgb(255, 102, 94);
+  width: 240px;
+  color: rgb(255, 102, 94);
 }
 
-#func:hover {
-    color: rgb(255,102,94);
-    border-bottom-style: dashed;
+#ref_table a {
+  background-color: #eee;
+  color: #000;
+  font-size: 18px;
+  padding: 0px 10px;
+  text-decoration: none;
 }
 
+#ref_table a:hover, #func:hover {
+  color: rgb(255, 102, 94);
+  border-bottom-style: dashed;
+}
 
-.description{
-    margin-left: 320px;
+.description {
+  margin-left: 320px;
+  padding-top: 40px;
 }
 
 .description h3 {
-    color: rgb(255, 102, 94);
+  color: rgb(255, 102, 94);
 }
 
 .description p {
-    text-align: justify;
-    width: 60%;
+  text-align: justify;
+  width: 60%;
 }
 
+.ml {
+  margin-left: 320px;
+}
 
- 
+@media (max-width: 768px) {
+  .text1, .text2, .description {
+    margin: auto;
+    width: auto;
+  }
+  .ml { margin: 0}
+  .description p {
+    width: auto;
+    text-align: left;
+  }
+
+  #title_start, #title_ex, #title_ref {
+    margin-left: 0;
+  }
+  .nav-wrapper li {
+    display: inline;
+    padding: 0px;
+  }
+  .nav-wrapper li a {
+  }
+}

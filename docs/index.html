@@ -2,232 +2,246 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Marilyn Monroe</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>Marilyn Monroe</title>
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-    <nav class="nav-wrapper">
-        <ul>
-            <!-- <li><img id="icon" src="assets/p5.Riso.gif"></li> -->
-            <li><a href="#get" id="C">Get Started</a></li>
-            <li><a href="#ex" id="Y">Examples</a></li>
-            <li><a href="#ref" id="M">References</a></li>
-            <li><a href="https://github.com/antiboredom/p5.riso/blob/master/lib/p5.riso.js" id="K">Source on GitHub</a></li>
-        </ul>
-    </nav>
+  <nav class="nav-wrapper">
+    <ul>
+      <!-- <li><img id="icon" src="assets/p5.Riso.gif"></li> -->
+      <li><a href="#get" id="C">Get Started</a></li>
+      <li><a href="#ex" id="Y">Examples</a></li>
+      <li><a href="#ref" id="M">Reference</a></li>
+      <li><a href="https://github.com/antiboredom/p5.riso/blob/master/lib/p5.riso.js" id="K">Source on GitHub</a></li>
+    </ul>
+  </nav>
 
-    <div>
-        <img id="icon" src="assets/p5.Riso.gif">
+  <div>
+    <img id="icon" src="assets/p5.Riso.gif">
+  </div>
+
+
+  <div id="CMYK">
+
+    <div id="get">
+      <p id="title_start">Get Started</p>
+      <!--                 <img src="marilyn-warhol-cyan.jpg" alt="Marilyn by Warhol"> -->
+      <div class="text1">
+        <h3>What & Why</h3>
+        <p> p5.Riso.js is a library that allows you to code with the logic of Risograph printing in mind. A Risograph printer prints in color layers, one color at a time. The p5.Riso Library was created so that creative coders can code in color layers, making the process of turning your sketch into print art simple. In the Riso Library, the colors layers are called Riso objects.</p>
+        <h3>Installation</h3>
+        <h4>Local</h4>
+        <ul>
+          <li>Download our source code and save it in the same folder where you keep your local .js files.</li>
+          <li>On your html file used to run the .js code, insert the following line under 'head' (this should contain the path to the file on your computer):</li>
+          <li><code>&lt;script src="../../lib/p5.riso.js"&gt;&lt;/script&gt;</code></li>
+        </ul>
+        <h4>OpenProcessing</h4>
+        <ul>
+          <li>Create a new tab by clicking the '+' button next to the mySketch tab.</li>
+          <li>Copy & Paste our source code into your new tab</li>
+          <li>You can also fork one of our sample sketches (made on OpenProcessing) and work from there!</li>
+        </ul>
+        <h4>p5.js Web Editor</button>
+        </h4>
+        <ul>
+          <li>Click the grey '>' button under the pink play button on the top left</li>
+          <li>Add a new file to your sketch by clicking the '▼' button. We suggest calling it p5.riso.js</li>
+          <li>Copy & Paste our source code into your new file</li>
+          <li>Click on the index.html file on the sidebar</li>
+          <li>Add the line of code below under the 'head':</li>
+          <li><code>&lt;script src="p5.riso.js"&gt;&lt;/script&gt;</code></li>
+        </ul>
+      </div>
     </div>
 
+    <div id="ex">
+      <p id="title_ex">Examples</p>
+      <div class="ml">
 
-    <div id="CMYK">
-
-        <div id="get">
-            <p id="title_start">Get Started</p>
-            <!--                 <img src="marilyn-warhol-cyan.jpg" alt="Marilyn by Warhol"> -->
-            <div class="text1">
-                <h3>What & Why</h3>
-                <p> p5.Riso.js is a library that allows you to code with the logic of Risograph printing in mind. A Risograph printer prints in color layers, one color at a time. The p5.Riso Library was created so that creative coders can code in color layers, making the process of turning your sketch into print art simple. In the Riso Library, the colors layers are called Riso objects.</p>
-                <h3>How to “install” it / enable it for use</h3>
-                <ul>
-                    <li><button id="op" onclick="show_ins()">OpenProcessing</button></li>
-                    <ul id="openPro">
-                        <li>Create a new tab by clicking the '+' button next to the mySketch tab.</li>
-                        <li>Copy & Paste our source code into your new tab</li>
-                        <li>You can also fork one of our sample sketches (made on OpenProcessing) and work from there!</li>
-                    </ul>
-                    <li><button id="lc" onclick="show_ins2()">Local Editors (such as Sublime)</button></li>
-                    <ul id="localIns">
-                        <li>Download our source code and save it in the same folder where you keep your local .js files.</li>
-                        <li>On your html file used to run the .js code, insert the following line under 'head' (this should contain the path to the file on your computer):</li>
-                        <li>&lt;script src="../../lib/p5.riso.js">< /script&gt; </li> </ul> <li><button id="we" onclick="show_ins3()">p5.js Web Editor</button></li>
-                        <ul id="p5Ins">
-                            <li>Click the grey '>' button under the pink play button on the top left</li>
-                            <li>Add a new file to your sketch by clicking the '▼' button. We suggest calling it p5.riso.js</li>
-                            <li>Copy & Paste our source code into your new file</li>
-                            <li>Click on the index.html file on the sidebar</li>
-                            <li>Add the line of code below under the 'head':</li>
-                            <li>&lt;script src="p5.riso.js">< /script&gt; </li> </ul> </ul> 
-                </div> 
-            </div> 
-
-            <div id="ex">
-                <p id="title_ex">Examples</p>
-                <div style="margin-left: 320px">
-
-                    <!-- FIRST ROW -->
-                    <div>
-                        <div class="container">
-                            <img src="assets/layers.png" alt="" class="image">
-                            <a href="https://www.openprocessing.org/sketch/742671"><div class="overlay overlayFade">
-                                <div class="text">Basic Layering</div>
-                            </div></a>
-                        </div>
-                        <div class="container">
-                            <img src="assets/cutout.png" alt="" class="image">
-                            <a href="https://www.openprocessing.org/sketch/735487"><div class="overlay overlayFade">
-                                <div class="text">Cutout</div>
-                            </div></a>
-                        </div>
-                        <div class="container">
-                            <img src="assets/marilyn.png" alt="" class="image">
-                            <a href="https://www.openprocessing.org/sketch/735496"><div class="overlay overlayFade">
-                                <div class="text">Cutout Text</div>
-                            </div></a>
-                        </div>
-                    </div>
-
-                    <!-- SECOND ROW -->
-                    <div>
-                        <div class="container">
-                            <img src="assets/pattern.png" alt="" class="image">
-                            <a href="https://www.openprocessing.org/sketch/736204"><div class="overlay overlayFade">
-                                <div class="text">Patterns</div>
-                            </div></a>
-                        </div>
-                        <div class="container">
-                            <img src="assets/lindenmayer.png" alt="" class="image">
-                            <a href="https://www.openprocessing.org/sketch/736394"><div class="overlay overlayFade">
-                                <div class="text">Lindernmayer</div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <img src="assets/videoCap.png" alt="" class="image">
-                            <a href="https://www.openprocessing.org/sketch/736456"><div class="overlay overlayFade">
-                                <div class="text">Video Capture</div>
-                            </div></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        <div id="ref">
-            <p id="title_ref">References</p>
-            <div class="text2" id = "ref_table">
-                <div><a href="#riso"><button id="func">Riso Object</button></a></div>
-                <div><a href="#fill"><button id="func">fill()</button></a></div>
-                <div><a href="#stroke"><button id="func">stroke()</button></a></div>
-                
-                <div><a href="#draw"><button id="func">draw()</button></a></div>
-                <div><a href="#image"><button id="func">image()</button></a></div>
-                <div><a href="#drawRiso"><button id="func">drawRiso()</button></a></div>
-                
-                <div><a href="#expRiso"><button id="func">exportRiso()</button></a></div>
-                <div><a href="#nofill"><button id="func">risoNoFill()</button></a></div>
-                <div><a href="#nostroke"><button id="func">risoNoStroke()</button></a></div>
-                
-                <div><a href="#clearRiso"><button id="func">clearRiso()</button></a></div>
-                <div><a href="#channel"><button id="func">extractRGBChannel()</button></a></div>
-                <div><a href="#cutout"><button id="func" >cutout()</button></a></div>
-                
-            </div>
-
-            <br>
-            <br>
-
-            <div class="description" id="riso">
-                <h3>Riso Object</h3>
-                <p>The Riso object is a color layer and it takes 3 parameters:</p>
-                <ol>
-                    <li>Color</li>
-                    <li>Width</li>
-                    <li>Height</li>
-                </ol>
-                <p>Example: var blue = new Riso(“blue”, width, height);</p>
-                <p>Here we create a blue color layer. The order which you create colors layers affects the composition of the canvas and how colors mix. If your top layer (created last) has opacity of 255, you will not be able to see the layers underneath. It is also important to keep in mind that a red layer on top of a blue layer looks different than a blue layer on top of a red layer. This is true for different color combinations, but these particular examples will turn out to be different shades of purple.</p>
-            </div>
-            <br>
-
-            <div class="description" id="fill">
-                <h3>riso.fill( );</h3>
-                <p>The fill method for Riso object has been overloaded so that it only takes one value. That value is a number between 0 and 255 and it corresponds to the alpha channel of that particular color.</p>
-            </div>
-            <br>
-
-            <div class="description" id="stroke">
-                <h3>riso.stroke( );</h3>
-                <p>The stroke method for Riso object has been overloaded so that it only takes one value. That value is a number between 0 and 255 and it corresponds to the alpha channel of that particular color.</p>
-            </div>
-            <br>
-
-            <div class="description" id="draw">
-                <h3>riso.draw( );</h3>
-                <p>Displays a particular Riso object. Should be used at the end of your draw.</p>
-            </div>
-            <br>
-
-            <div class="description" id="image">
-                <h3>riso.image(img, x, y, width, height);</h3>
-                <p>Takes 5 parameters:</p>
-                <ol>
-                    <li>Which image to display on the layer</li>
-                    <li>X-position</li>
-                    <li>Y-position</li>
-                    <li>Width</li>
-                    <li>Height</li>
-                </ol>
-            </div>  
-            <br>
-
-            <div class="description" id="drawRiso">
-                <h3>drawRiso( );</h3>
-                <p>Displays all Riso objects. Should be used at the end of your draw.</p>
-            </div>
-            <br>
-
-            <div class="description" id="expRiso">
-                <h3>exportRiso( );</h3>
-                <p>Allows you to save the color layers on your computer</p>
-            </div>
-            <br>
-
-            <div class="description" id="nofill">
-                <h3>risoNoFill( );</h3>
-                <p>Removes fill from all objects in all layers</p>
-            </div>  
-            <br>
-
-            <div class="description" id="nostroke">
-                <h3>risoNoStroke( );</h3>
-                <p>Removes stroke from all objects in all layers</p>
-            </div>   
-            <br>
-
-            <div class="description" id="expRiso">
-                <h3>clearRiso( );</h3>
-                <p>Clears all objects in all layers</p>
-            </div>     
-            <br>
-
-            <div class="description" id="channel">
-                <h3>extractRGBChannel( );</h3>
-                <p>Allows you to extract a certain color channel from an image. Takes in two parameters:</p>
-                <ol>
-                    <li>Image object</li>
-                    <li>Number corresponding to the Color Channel</li>
-                    <ul>
-                        <li>0 = red</li>
-                        <li>1 = green</li>
-                        <li>2 = blue</li>
-                    </ul>
-                </ol>
-            </div>   
-            <br>
-
-            <div class="description" id="cutout">
-                <h3>cutout( );</h3>
-                <p>Allows you to cut out a certain Graphic Object out of a color layer so that the colors don’t mix. That object could be on another Riso color layer or even a text you created using the createGraphics() method.</p>
-            </div>    
-
+        <!-- FIRST ROW -->
+        <div>
+          <div class="container">
+            <img src="assets/layers.png" alt="" class="image">
+            <a href="https://www.openprocessing.org/sketch/742671">
+              <div class="overlay overlayFade">
+                <div class="text">Basic Layering</div>
+              </div>
+            </a>
+          </div>
+          <div class="container">
+            <img src="assets/cutout.png" alt="" class="image">
+            <a href="https://www.openprocessing.org/sketch/735487">
+              <div class="overlay overlayFade">
+                <div class="text">Cutout</div>
+              </div>
+            </a>
+          </div>
+          <div class="container">
+            <img src="assets/marilyn.png" alt="" class="image">
+            <a href="https://www.openprocessing.org/sketch/735496">
+              <div class="overlay overlayFade">
+                <div class="text">Cutout Text</div>
+              </div>
+            </a>
+          </div>
         </div>
-        
+
+        <!-- SECOND ROW -->
+        <div>
+          <div class="container">
+            <img src="assets/pattern.png" alt="" class="image">
+            <a href="https://www.openprocessing.org/sketch/736204">
+              <div class="overlay overlayFade">
+                <div class="text">Patterns</div>
+              </div>
+            </a>
+          </div>
+          <div class="container">
+            <img src="assets/lindenmayer.png" alt="" class="image">
+            <a href="https://www.openprocessing.org/sketch/736394">
+              <div class="overlay overlayFade">
+                <div class="text">Lindernmayer</div>
+              </div>
+          </div>
+          <div class="container">
+            <img src="assets/videoCap.png" alt="" class="image">
+            <a href="https://www.openprocessing.org/sketch/736456">
+              <div class="overlay overlayFade">
+                <div class="text">Video Capture</div>
+              </div>
+            </a>
+          </div>
         </div>
-        <script rel="scriptsheet" src="script.js"></script>
+      </div>
+    </div>
+
+    <div id="ref">
+      <p id="title_ref">Reference</p>
+      <div class="text2" id="ref_table">
+        <div><a href="#riso">Riso Object</a></div>
+        <div><a href="#fill">fill()</a></div>
+        <div><a href="#stroke">stroke()</a></div>
+
+        <div><a href="#draw">draw()</a></div>
+        <div><a href="#image">image()</a></div>
+        <div><a href="#drawRiso">drawRiso()</a></div>
+
+        <div><a href="#expRiso">exportRiso()</a></div>
+        <div><a href="#nofill">risoNoFill()</a></div>
+        <div><a href="#nostroke">risoNoStroke()</a></div>
+
+        <div><a href="#clearRiso">clearRiso()</a></div>
+        <div><a href="#channel">extractRGBChannel()</a></div>
+        <div><a href="#cutout">cutout()</a></div>
+
+      </div>
+
+      <br>
+      <br>
+
+      <div class="description" id="riso">
+        <h3>Riso Object</h3>
+        <p>The Riso object is a color layer and it takes 3 parameters:</p>
+        <ol>
+          <li>Color</li>
+          <li>Width</li>
+          <li>Height</li>
+        </ol>
+        <p>Example: var blue = new Riso(“blue”, width, height);</p>
+        <p>Here we create a blue color layer. The order which you create colors layers affects the composition of the canvas and how colors mix. If your top layer (created last) has opacity of 255, you will not be able to see the layers underneath. It is also important to keep in mind that a red layer on top of a blue layer looks different than a blue layer on top of a red layer. This is true for different color combinations, but these particular examples will turn out to be different shades of purple.</p>
+      </div>
+      <br>
+
+      <div class="description" id="fill">
+        <h3>riso.fill( );</h3>
+        <p>The fill method for Riso object has been overloaded so that it only takes one value. That value is a number between 0 and 255 and it corresponds to the alpha channel of that particular color.</p>
+      </div>
+      <br>
+
+      <div class="description" id="stroke">
+        <h3>riso.stroke( );</h3>
+        <p>The stroke method for Riso object has been overloaded so that it only takes one value. That value is a number between 0 and 255 and it corresponds to the alpha channel of that particular color.</p>
+      </div>
+      <br>
+
+      <div class="description" id="draw">
+        <h3>riso.draw( );</h3>
+        <p>Displays a particular Riso object. Should be used at the end of your draw.</p>
+      </div>
+      <br>
+
+      <div class="description" id="image">
+        <h3>riso.image(img, x, y, width, height);</h3>
+        <p>Takes 5 parameters:</p>
+        <ol>
+          <li>Which image to display on the layer</li>
+          <li>X-position</li>
+          <li>Y-position</li>
+          <li>Width</li>
+          <li>Height</li>
+        </ol>
+      </div>
+      <br>
+
+      <div class="description" id="drawRiso">
+        <h3>drawRiso( );</h3>
+        <p>Displays all Riso objects. Should be used at the end of your draw.</p>
+      </div>
+      <br>
+
+      <div class="description" id="expRiso">
+        <h3>exportRiso( );</h3>
+        <p>Allows you to save the color layers on your computer</p>
+      </div>
+      <br>
+
+      <div class="description" id="nofill">
+        <h3>risoNoFill( );</h3>
+        <p>Removes fill from all objects in all layers</p>
+      </div>
+      <br>
+
+      <div class="description" id="nostroke">
+        <h3>risoNoStroke( );</h3>
+        <p>Removes stroke from all objects in all layers</p>
+      </div>
+      <br>
+
+      <div class="description" id="expRiso">
+        <h3>clearRiso( );</h3>
+        <p>Clears all objects in all layers</p>
+      </div>
+      <br>
+
+      <div class="description" id="channel">
+        <h3>extractRGBChannel( );</h3>
+        <p>Allows you to extract a certain color channel from an image. Takes in two parameters:</p>
+        <ol>
+          <li>Image object</li>
+          <li>Number corresponding to the Color Channel</li>
+          <ul>
+            <li>0 = red</li>
+            <li>1 = green</li>
+            <li>2 = blue</li>
+          </ul>
+        </ol>
+      </div>
+      <br>
+
+      <div class="description" id="cutout">
+        <h3>cutout( );</h3>
+        <p>Allows you to cut out a certain Graphic Object out of a color layer so that the colors don’t mix. That object could be on another Riso color layer or even a text you created using the createGraphics() method.</p>
+      </div>
+
+    </div>
+
+  </div>
+  <script rel="scriptsheet" src="script.js"></script>
 </body>
 
 </html>
