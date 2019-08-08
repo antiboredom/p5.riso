@@ -1,50 +1,48 @@
 let blue;
 let red;
-let img;
-
-var capture; // this is the video camera
-var capimg;
-var left, right;
-var theblur; // this is the blur
-var a = 0.1;
-var b = 1.0-a;
+let capture; // this is the video camera
+let capimg;
 
 function setup() {
-	createCanvas(640, 480);
-	
-	// red = new Riso("red", width/2, height);
-	// blue = new Riso("blue", width, height/2);
-	red = new Riso("red", width, height);
-  blue = new Riso("blue", width, height);
-	
-	pixelDensity(1);
-	background(100);
-	capture = createCapture(VIDEO); // this opens the digitizer
-	theblur = createImage(640, 480);
-	capture.size(640, 480);
-	capture.hide();
-	scale(-1.0,1.0);
-	//frameRate(10);
+  pixelDensity(1);
 
+  let canvas = createCanvas(640, 480);
+
+
+  // create riso channels
+  red = new Riso('red');
+  blue = new Riso('blue');
+
+  // start and hide camera
+  capture = createCapture(VIDEO);
+  capture.size(640, 480);
+  capture.hide();
+
+  frameRate(10);
 }
 
 function draw() {
-	background(255);
-	clearRiso();
-	
-	blue.fill(100);
-	red.fill(100);
-	
-	capimg = capture.get(0, 0, 640, 480); // what the fuck is this?
+  background(255);
 
-	blue.image(capture, 0, 0, capture.width, capture.height);
-	red.image(capture, 0, 0, capture.width, capture.height);
-	
-	// blue.draw();
-	red.draw();
-	// drawRiso();
+  // clear riso layers
+  clearRiso();
+
+  // extract the red ang blue channels
+  let reds = extractRGBChannel(capture, 0);
+  let blues = extractRGBChannel(capture, 2);
+
+  // draw the blue pixels on the blue channel
+  // and red pixels on the red channel
+  blue.image(blues, 0, 0);
+  red.image(reds, 0, 0);
+
+  // remove overlapping pixels
+  blue.cutout(red);
+
+  // draw all riso layers
+  drawRiso();
 }
 
-function mouseClicked(){
-	exportRiso();
+function mouseClicked() {
+  exportRiso();
 }
