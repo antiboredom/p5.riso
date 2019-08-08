@@ -1,13 +1,11 @@
 let blue;
 let red;
 let capture; // this is the video camera
-let capimg;
 
 function setup() {
   pixelDensity(1);
 
   let canvas = createCanvas(640, 480);
-
 
   // create riso channels
   red = new Riso('red');
@@ -28,8 +26,8 @@ function draw() {
   clearRiso();
 
   // extract the red ang blue channels
-  let reds = extractRGBChannel(capture, 0);
-  let blues = extractRGBChannel(capture, 2);
+  let reds = extractRGBChannel(capture, 'red');
+  let blues = extractRGBChannel(capture, 'blue');
 
   // draw the blue pixels on the blue channel
   // and red pixels on the red channel
