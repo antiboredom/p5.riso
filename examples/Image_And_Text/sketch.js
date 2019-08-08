@@ -6,25 +6,27 @@ function preload() {
 }
 
 function setup() {
+  pixelDensity(1);
   createCanvas(8.5 * 72, 11 * 72);
-  blue = new Riso('blue', width, height);
-  red = new Riso('red', width, height);
+  blue = new Riso('blue');
+  red = new Riso('red');
   noLoop();
 }
 
 function draw() {
   background(255);
 
-  risoNoStroke();
   clearRiso();
 
-  let reds = extractRGBChannel(img, 0);
-  let blues = extractRGBChannel(img, 2);
+  let reds = extractRGBChannel(img, "red");
+  let blues = extractRGBChannel(img, "blue");
 
   blue.imageMode(CENTER);
   red.imageMode(CENTER);
+
   blue.image(blues, width / 2, height / 2, img.width / 2, img.height / 2);
   red.image(reds, width / 2, height / 2, img.width / 2, img.height / 2);
+
 
   let textGraphic = createGraphics(width, height);
   textGraphic.fill(0);
