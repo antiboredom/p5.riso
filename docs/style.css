@@ -431,13 +431,14 @@ idea behind it:
 }
 
 .riso-example {
-  display: block;
-  max-width: 600px;
-  margin-bottom: 10px;
+  display: inline-block;
+  /* max-width: 300px; */
+  width: 45%;
+  margin: 0;
 }
 
 .riso-example img {
-  width: 100%;
+  width: 98%;
   display: block;
 }
 
