@@ -432,9 +432,12 @@ idea behind it:
 .riso-example {
   display: block;
   max-width: 500px;
+  margin-bottom: 10px;
 }
+
 .riso-example img {
   width: 100%;
+  display: block;
 }
 
 @media (max-width: 768px) {
