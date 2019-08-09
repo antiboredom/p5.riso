@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>p5.riso</title>
+  <link rel="stylesheet" href="prism.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -147,11 +148,21 @@
         <h3>Riso Object</h3>
         <p>The Riso object is a color layer and it takes 3 parameters:</p>
         <ol>
-          <li>Color</li>
-          <li>Width</li>
-          <li>Height</li>
+          <li>Color: an array with [r,g,b] values, or a string set to a Risograph color like "bright red", "blue" or "orange"</li>
+          <li>Width (optional)</li>
+          <li>Height (optional)</li>
         </ol>
-        <p>Example: var blue = new Riso(“blue”, width, height);</p>
+
+<pre><code class="language-javascript">let blueChannel;
+
+function setup(){
+  createCanvas(500, 500);
+  blueChannel = new Riso("blue");
+  blueChannel.fill(100);
+  blueChannel.rect(20, 20, 100, 100);
+  drawRiso();
+}</code></pre>
+
         <p>Here we create a blue color layer. The order which you create colors layers affects the composition of the canvas and how colors mix. If your top layer (created last) has opacity of 255, you will not be able to see the layers underneath. It is also important to keep in mind that a red layer on top of a blue layer looks different than a blue layer on top of a red layer. This is true for different color combinations, but these particular examples will turn out to be different shades of purple.</p>
       </div>
       <br>
@@ -247,6 +258,7 @@
     </div>
   </div>
   <script rel="scriptsheet" src="script.js"></script>
+  <script src="prism.js"></script>
 </body>
 
 </html>
