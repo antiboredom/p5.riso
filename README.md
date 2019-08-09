@@ -4,21 +4,18 @@ A p5 library for risograph printing by Sam Lavigne and Tega Brain.
 
 Please note: this library is pre-alpha, and likely to change! See [the documentation here](https://antiboredom.github.io/p5.riso)
 
-## Risograph Printer
-
-How to use the Risograph Printer: 
-- https://wp.nyu.edu/idmprintclub/
-
 ## What & Why?
-- p5.Riso.js is a library that allows you to code with the logic of Risograph printing in mind. 
-- A Risograph printer prints in color layers, one color at a time. The p5.Riso Library was created so that creative coders can code in color layers, making the process of turning your sketch into print art simple.
+- p5.Riso.js is a p5.js library for the creatation of imagery and files suitable for Risograph printing.
+- A Risograph is printer that automates the screen printing process. As in screen printing, it prints one color at a time, each as a separate layer. To prepare digital files for printing, images therefore need to be separated into single color channels and printed one at a time. The p5.Riso Library was created to automate color separation and image dithering processes and to make the process of turning your p5 sketches into print art simple.
+
+## Getting started
 - In the Riso Library, the colors layers are called Riso objects.
 
 ## Documentation
 
 **Riso Object**
 - The Riso object is a color layer. 
-- [3 parameters:]
+- It creates a graphics object. With one parameter, it is set to the width and height of the canvas. If it is given three parameters, the 2nd and 3rd parameter set it to a custom width and height.
 1. Color
 2. Width
 3. Height 
