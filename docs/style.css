@@ -140,7 +140,7 @@ body {
 }
 
 #icon {
-  width: 320px;
+  /* width: 320px; */
   /*    position: absolute;
     right: 60px;
 */
@@ -160,8 +160,6 @@ nav {
 img {
   margin-top: auto;
   margin-bottom: auto;
-  width: 200px;
-  height: 200px;
 }
 
 table {
@@ -429,6 +427,14 @@ idea behind it:
 
 .riso-WHITE, .riso-CLEARMEDIUM, .riso-YELLOW, .riso-LIGHTLIME {
   color: #000;
+}
+
+.riso-example {
+  display: block;
+  max-width: 500px;
+}
+.riso-example img {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
