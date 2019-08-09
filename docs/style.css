@@ -18,8 +18,8 @@ body {
   /*background: white;*/
   top: 130px;
   margin-left: 300px;
-  line-height: 30px;
-  max-width: 600px;
+  /* line-height: 30px; */
+  max-width: 700px;
   height: 180px;
   padding: 10px;
 }
@@ -401,6 +401,7 @@ idea behind it:
 .description {
   margin-left: 320px;
   padding-top: 40px;
+  max-width: 700px;
 }
 
 .description h3 {
@@ -409,7 +410,7 @@ idea behind it:
 
 .description p {
   /* text-align: justify; */
-  width: 60%;
+  /* width: 60%; */
 }
 
 .ml {

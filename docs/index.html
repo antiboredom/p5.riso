@@ -149,135 +149,240 @@
     <div id="ref">
       <p id="title_ref">Reference</p>
       <div class="text2" id="ref_table">
-        <div><a href="#riso">Riso Object</a></div>
-        <div><a href="#fill">fill()</a></div>
-        <div><a href="#stroke">stroke()</a></div>
-
-        <div><a href="#draw">draw()</a></div>
-        <div><a href="#image">image()</a></div>
-        <div><a href="#drawRiso">drawRiso()</a></div>
-
-        <div><a href="#expRiso">exportRiso()</a></div>
+        <div><a href="#riso">new Riso()</a></div>
+        <div><a href="#fill">Riso.fill()</a></div>
+        <div><a href="#stroke">Riso.stroke()</a></div>
         <div><a href="#nofill">risoNoFill()</a></div>
         <div><a href="#nostroke">risoNoStroke()</a></div>
-
         <div><a href="#clearRiso">clearRiso()</a></div>
-        <div><a href="#channel">extractRGBChannel()</a></div>
+        <div><a href="#image">Riso.image()</a></div>
         <div><a href="#cutout">cutout()</a></div>
-
+        <div><a href="#channel">extractRGBChannel()</a></div>
+        <div><a href="#drawRiso">drawRiso()</a></div>
+        <div><a href="#expRiso">exportRiso()</a></div>
       </div>
 
       <br>
       <br>
 
       <div class="description" id="riso">
-        <h3>Riso Object</h3>
-        <p>The Riso object is a color layer and it takes 3 parameters:</p>
-        <ol>
-          <li>Color: an array with [r,g,b] values, or a string set to a Risograph color like "bright red", "blue" or "orange"</li>
-          <li>Width (optional)</li>
-          <li>Height (optional)</li>
-        </ol>
+        <h3>new Riso(color, width, height)</h3>
+        <p>The base Riso object is a <b>single-color p5 graphics object</b>. It's constructor can take 3 parameters:</p>
+        <ul>
+          <li><b>color:</b> a string set to a Risograph color like "brightred", "blue" or "orange", or an array with [r,g,b] values</li>
+          <li><b>width:</b> the width of the riso canvas (optional - defaults to width of sketch)</li>
+          <li><b>height:</b> the height of the riso canvas (optional - defaults to height of sketch)</li>
+        </ul>
+
+        <p>Internally, the riso object extends p5s built in <a href="https://p5js.org/reference/#/p5/createGraphics">graphics object</a>. You use it mostly the same way with a few exceptions, as detailed in this documentation.</p>
 
 <pre><code class="language-javascript">let blueChannel;
 
 function setup(){
   createCanvas(500, 500);
   blueChannel = new Riso("blue");
-  blueChannel.fill(100);
+  blueChannel.fill(128);
   blueChannel.rect(20, 20, 100, 100);
   drawRiso();
 }</code></pre>
 
-        <p>Here we create a blue color layer. The order which you create colors layers affects the composition of the canvas and how colors mix. If your top layer (created last) has opacity of 255, you will not be able to see the layers underneath. It is also important to keep in mind that a red layer on top of a blue layer looks different than a blue layer on top of a red layer. This is true for different color combinations, but these particular examples will turn out to be different shades of purple.</p>
-
-        <p>The riso object extends p5s built in Graphics object. You use it mostly the same way with a few exceptions, detailed below.</p>
+        <p>Here we create a blue color layer, set it's fill to be 128 (or half opacity) and then draw a rectangle in it.</p>
+        <p>The order which you create colors layers affects the composition of the canvas and how colors mix. If your top layer (created last) has opacity of 255, you will not be able to see the layers underneath. Different color combination may result in different blended colors.</p>
 
         <p>The following default colors are available: <span id="all-colors"></span></p>
       </div>
 
-      <br>
-
       <div class="description" id="fill">
-        <h3>riso.fill( );</h3>
-        <p>The fill method for Riso object has been overloaded so that it only takes one value. That value is a number between 0 and 255 and it corresponds to the alpha channel of that particular color.</p>
+        <h3>Riso.fill(value);</h3>
+        <p>The fill method for Riso objects takes a single number value between 0 and 255. 0 is completely transparent, and 255 is completely opaque.</p>
+
+<pre><code class="language-javascript">function setup(){
+  createCanvas(500, 500);
+  let blueChannel = new Riso("blue");
+
+  blueChannel.fill(255); // completely opaque
+  blueChannel.ellipse(0, 0, 100, 100);
+
+  blueChannel.fill(50); // fairly transparent
+  blueChannel.ellipse(50, 50, 100, 100);
+
+  blueChannel.fill(3); // almost invisible
+  blueChannel.ellipse(75, 75, 100, 100);
+
+  drawRiso();
+}</code></pre>
+
       </div>
-      <br>
 
       <div class="description" id="stroke">
-        <h3>riso.stroke( );</h3>
-        <p>The stroke method for Riso object has been overloaded so that it only takes one value. That value is a number between 0 and 255 and it corresponds to the alpha channel of that particular color.</p>
-      </div>
-      <br>
+        <h3>Riso.stroke(value);</h3>
+        <p>Just like fill, the stroke method for Riso objects takes a single number value between 0 and 255.</p>
+<pre><code class="language-javascript">function setup(){
+  createCanvas(500, 500);
 
-      <div class="description" id="draw">
-        <h3>riso.draw( );</h3>
-        <p>Displays a particular Riso object. Should be used at the end of your draw.</p>
+  let orange = new Riso("orange");
+  orange.stroke(255);
+  orange.strokeWeight(5);
+  orange.rect(50, 50, 100, 100);
+  drawRiso();
+}</code></pre>
       </div>
-      <br>
-
-      <div class="description" id="image">
-        <h3>riso.image(img, x, y, width, height);</h3>
-        <p>Takes 5 parameters:</p>
-        <ol>
-          <li>Which image to display on the layer</li>
-          <li>X-position</li>
-          <li>Y-position</li>
-          <li>Width</li>
-          <li>Height</li>
-        </ol>
-      </div>
-      <br>
-
-      <div class="description" id="drawRiso">
-        <h3>drawRiso( );</h3>
-        <p>Displays all Riso objects. Should be used at the end of your draw.</p>
-      </div>
-      <br>
-
-      <div class="description" id="expRiso">
-        <h3>exportRiso( );</h3>
-        <p>Allows you to save the color layers on your computer</p>
-      </div>
-      <br>
 
       <div class="description" id="nofill">
-        <h3>risoNoFill( );</h3>
-        <p>Removes fill from all objects in all layers</p>
+        <h3>risoNoFill();</h3>
+        <p>Convenience function that calls noFill() on all riso layers.</p>
+        <pre><code class="language-javascript">risoNoFill();</code></pre>
       </div>
-      <br>
 
       <div class="description" id="nostroke">
-        <h3>risoNoStroke( );</h3>
-        <p>Removes stroke from all objects in all layers</p>
+        <h3>risoNoStroke();</h3>
+        <p>Convenience function that calls noStroke() on all riso layers.</p>
+        <pre><code class="language-javascript">risoNoStroke();</code></pre>
       </div>
-      <br>
 
-      <div class="description" id="expRiso">
-        <h3>clearRiso( );</h3>
-        <p>Clears all objects in all layers</p>
+      <div class="description" id="clearRiso">
+        <h3>clearRiso();</h3>
+        <p>Completely clears all riso layers. Useful if you are drawing to riso layers in the draw loop rather than just in setup.</p>
+        <pre><code class="language-javascript">clearRiso();</code></pre>
       </div>
-      <br>
 
-      <div class="description" id="channel">
-        <h3>extractRGBChannel( );</h3>
-        <p>Allows you to extract a certain color channel from an image. Takes in two parameters:</p>
-        <ol>
-          <li>Image object</li>
-          <li>Number corresponding to the Color Channel</li>
-          <ul>
-            <li>0 = red</li>
-            <li>1 = green</li>
-            <li>2 = blue</li>
-          </ul>
-        </ol>
+<!--       <div class="description" id="draw"> -->
+<!--         <h3>Riso.draw();</h3> -->
+<!--         <p>Draws an individual riso channel on the screen. Should be used at the end of your draw loop or setup.</p> -->
+<!--  -->
+<!-- <pre><code class="language&#45;javascript">function setup(){ -->
+<!--   createCanvas(500, 500); -->
+<!--  -->
+<!--   let orange = new Riso("orange"); -->
+<!--   orange.fill(255); // completely opaque -->
+<!--   orange.ellipse(0, 0, 100, 100); -->
+<!--   orange.draw(); -->
+<!-- }</code></pre> -->
+<!--       </div> -->
+
+      <div class="description" id="image">
+        <h3>Riso.image(img, x, y, width, height);</h3>
+        <p>Draws an image onto a riso layer. Acts just like p5's image function, but removes color. Use fill to set the opacity of the image.</p>
+        <ul>
+          <li><b>img:</b> a p5 image, video or graphics object</li>
+          <li><b>x:</b> x-coordinate of image</li>
+          <li><b>y:</b> y-coordinate of image</li>
+          <li><b>width:</b> width of image (optional)</li>
+          <li><b>height:</b> height of image (optional)</li>
+        </ul>
+<pre><code class="language-javascript">let img;
+
+function preload() {
+  img = loadImage("cat.jpg");
+}
+
+function setup(){
+  createCanvas(500, 500);
+
+  let orange = new Riso("orange");
+  orange.fill(200);
+  orange.image(img, 0, 0);
+  drawRiso();
+}</code></pre>
       </div>
-      <br>
+
 
       <div class="description" id="cutout">
-        <h3>cutout( );</h3>
-        <p>Allows you to cut out a certain Graphic Object out of a color layer so that the colors don’t mix. That object could be on another Riso color layer or even a text you created using the createGraphics() method.</p>
+        <h3>Riso.cutout(p5.Graphic);</h3>
+        <p>Cuts out portions of a risograph layer using fill values from a p5.Graphics object or another riso layer. This is useful so that two channels don't overlap.</p>
+
+<pre><code class="language-javascript">function setup(){
+  createCanvas(500, 500);
+
+  let blue = new Riso("blue");
+  let red = new Riso("red");
+
+  blue.ellipse(0, 0, 100, 100);
+  red.ellipse(0, 0, 150, 150);
+
+  //completely removes overlaps between blue and red
+  blue.cutout(red);
+  drawRiso();
+}</code></pre>
       </div>
+
+      <div class="description" id="channel">
+        <h3>extractRGBChannel(img, channel);</h3>
+        <p>Extracts a red, blue or green color channel from an image, and saves as a new image. Takes in two parameters:</p>
+        <ul>
+          <li><b>img:</b> a p5 image object</li>
+          <li><b>channel:</b> the channel to extract. Can either be a channel name ("red", "green", or "blue") or number (0, 1, 2) </li>
+        </ul>
+<pre><code class="language-javascript">// convert a color image into a red and blue print
+let img;
+
+function preload() {
+  img = loadImage('cat.jpg')
+}
+
+function setup(){
+  createCanvas(500, 500);
+
+  let blue = new Riso("blue");
+  let red = new Riso("red");
+
+  let justBlues = extractRGBChannel(img, "blue");
+  let justReds = extractRGBChannel(img, "red");
+
+  blue.draw(justBlues);
+  red.draw(justReds);
+
+  drawRiso();
+}</code></pre>
+      </div>
+
+      <div class="description" id="drawRiso">
+        <h3>drawRiso();</h3>
+        <p>Draws all Riso objects/layers to the screen. Should be used at the end of your draw or setup functions.</p>
+<pre><code class="language-javascript">function setup(){
+  createCanvas(500, 500);
+
+  let colors = ["red", "blue", "green", "black"];
+  for (let i = 0; i < colors.length; i++) {
+    let channel = new Riso(colors[i]);
+    channel.fill(random(100, 200));
+    channel.ellipse(random(0, width), random(0, height), 100, 100);
+  }
+
+  drawRiso();
+}</code></pre>
+      </div>
+
+      <div class="description" id="expRiso">
+        <h3>exportRiso();</h3>
+        <p>Exports all riso layers as individual png files. You should call this function in an event listener like mousePressed, or at the end of your setup function.</p>
+<pre><code class="language-javascript">let blue;
+let red;
+
+function setup(){
+  createCanvas(500, 500);
+
+  blue = new Riso("blue");
+  red = new Riso("red");
+}
+
+function draw() {
+  clearRiso();
+
+  blue.fill(map(mouseX, 0, width, 0, 255));
+  red.fill(map(mouseY, 0, height, 0, 255));
+
+  blue.ellipse(200, 200, 100, 100);
+  red.ellipse(250, 250, 100, 100);
+}
+
+function mousePressed() {
+  exportRiso();
+}</code></pre>
+      </div>
+
+
+
 
     </div>
 
