@@ -23,7 +23,7 @@ function draw() {
   textGraphic.textFont('Arial');
   textGraphic.textAlign(CENTER, CENTER);
   textGraphic.textSize(20);
-  textGraphic.text('CUTOUT', width / 2 + 5, height / 2);
+  textGraphic.text('P5.RISO', width / 2 + 5, height / 2);
 
   red.cutout(textGraphic); // cut text out of red
   blue.cutout(textGraphic); // cut text out of blue
