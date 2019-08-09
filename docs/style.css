@@ -140,7 +140,7 @@ body {
 }
 
 #icon {
-  width: 320px;
+  /* width: 320px; */
   /*    position: absolute;
     right: 60px;
 */
@@ -160,8 +160,6 @@ nav {
 img {
   margin-top: auto;
   margin-bottom: auto;
-  width: 200px;
-  height: 200px;
 }
 
 table {
@@ -410,12 +408,36 @@ idea behind it:
 }
 
 .description p {
-  text-align: justify;
+  /* text-align: justify; */
   width: 60%;
 }
 
 .ml {
   margin-left: 320px;
+}
+
+.riso-color {
+  display: inline-block;
+  font-size: .8em;
+  text-transform: lowercase;
+  color: #fff;
+  padding: 1px;
+  margin: 2px;
+}
+
+.riso-WHITE, .riso-CLEARMEDIUM, .riso-YELLOW, .riso-LIGHTLIME {
+  color: #000;
+}
+
+.riso-example {
+  display: block;
+  max-width: 500px;
+  margin-bottom: 10px;
+}
+
+.riso-example img {
+  width: 100%;
+  display: block;
 }
 
 @media (max-width: 768px) {

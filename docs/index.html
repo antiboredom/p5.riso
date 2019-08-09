@@ -60,60 +60,91 @@
       <p id="title_ex">Examples</p>
       <div class="ml">
 
-        <!-- FIRST ROW -->
-        <div>
-          <div class="container">
-            <img src="assets/layers.png" alt="" class="image">
-            <a href="https://www.openprocessing.org/sketch/742671">
-              <div class="overlay overlayFade">
-                <div class="text">Basic Layering</div>
-              </div>
-            </a>
-          </div>
-          <div class="container">
-            <img src="assets/cutout.png" alt="" class="image">
-            <a href="https://www.openprocessing.org/sketch/735487">
-              <div class="overlay overlayFade">
-                <div class="text">Cutout</div>
-              </div>
-            </a>
-          </div>
-          <div class="container">
-            <img src="assets/marilyn.png" alt="" class="image">
-            <a href="https://www.openprocessing.org/sketch/735496">
-              <div class="overlay overlayFade">
-                <div class="text">Cutout Text</div>
-              </div>
-            </a>
-          </div>
+        <div class="riso-example">
+          <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Cutout">
+            <img src="assets/cutout.jpg">
+          </a>
         </div>
 
-        <!-- SECOND ROW -->
-        <div>
-          <div class="container">
-            <img src="assets/pattern.png" alt="" class="image">
-            <a href="https://www.openprocessing.org/sketch/736204">
-              <div class="overlay overlayFade">
-                <div class="text">Patterns</div>
-              </div>
-            </a>
-          </div>
-          <div class="container">
-            <img src="assets/lindenmayer.png" alt="" class="image">
-            <a href="https://www.openprocessing.org/sketch/736394">
-              <div class="overlay overlayFade">
-                <div class="text">Lindernmayer</div>
-              </div>
-          </div>
-          <div class="container">
-            <img src="assets/videoCap.png" alt="" class="image">
-            <a href="https://www.openprocessing.org/sketch/736456">
-              <div class="overlay overlayFade">
-                <div class="text">Video Capture</div>
-              </div>
-            </a>
-          </div>
+        <div class="riso-example">
+          <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Image_And_Text">
+            <img src="assets/image.jpg">
+          </a>
         </div>
+
+        <div class="riso-example">
+          <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Capture">
+            <img src="assets/capture.jpg">
+          </a>
+        </div>
+
+        <div class="riso-example">
+          <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Dither">
+            <img src="assets/dither1.jpg">
+          </a>
+        </div>
+
+        <div class="riso-example">
+          <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Dither">
+            <img src="assets/dither2.jpg">
+          </a>
+        </div>
+
+        <!-- FIRST ROW -->
+        <!-- <div> -->
+        <!--   <div class="container"> -->
+        <!--     <img src="assets/layers.png" alt="" class="image"> -->
+        <!--     <a href="https://www.openprocessing.org/sketch/742671"> -->
+        <!--       <div class="overlay overlayFade"> -->
+        <!--         <div class="text">Basic Layering</div> -->
+        <!--       </div> -->
+        <!--     </a> -->
+        <!--   </div> -->
+        <!--   <div class="container"> -->
+        <!--     <img src="assets/cutout.png" alt="" class="image"> -->
+        <!--     <a href="https://www.openprocessing.org/sketch/735487"> -->
+        <!--       <div class="overlay overlayFade"> -->
+        <!--         <div class="text">Cutout</div> -->
+        <!--       </div> -->
+        <!--     </a> -->
+        <!--   </div> -->
+        <!--   <div class="container"> -->
+        <!--     <img src="assets/marilyn.png" alt="" class="image"> -->
+        <!--     <a href="https://www.openprocessing.org/sketch/735496"> -->
+        <!--       <div class="overlay overlayFade"> -->
+        <!--         <div class="text">Cutout Text</div> -->
+        <!--       </div> -->
+        <!--     </a> -->
+        <!--   </div> -->
+        <!-- </div> -->
+        <!--  -->
+        <!-- <!&#45;&#45; SECOND ROW &#45;&#45;> -->
+        <!-- <div> -->
+        <!--   <div class="container"> -->
+        <!--     <img src="assets/pattern.png" alt="" class="image"> -->
+        <!--     <a href="https://www.openprocessing.org/sketch/736204"> -->
+        <!--       <div class="overlay overlayFade"> -->
+        <!--         <div class="text">Patterns</div> -->
+        <!--       </div> -->
+        <!--     </a> -->
+        <!--   </div> -->
+        <!--   <div class="container"> -->
+        <!--     <img src="assets/lindenmayer.png" alt="" class="image"> -->
+        <!--     <a href="https://www.openprocessing.org/sketch/736394"> -->
+        <!--       <div class="overlay overlayFade"> -->
+        <!--         <div class="text">Lindernmayer</div> -->
+        <!--       </div> -->
+        <!--   </div> -->
+        <!--   <div class="container"> -->
+        <!--     <img src="assets/videoCap.png" alt="" class="image"> -->
+        <!--     <a href="https://www.openprocessing.org/sketch/736456"> -->
+        <!--       <div class="overlay overlayFade"> -->
+        <!--         <div class="text">Video Capture</div> -->
+        <!--       </div> -->
+        <!--     </a> -->
+        <!--   </div> -->
+        <!-- </div> -->
+
       </div>
     </div>
 
@@ -161,7 +192,12 @@ function setup(){
 }</code></pre>
 
         <p>Here we create a blue color layer. The order which you create colors layers affects the composition of the canvas and how colors mix. If your top layer (created last) has opacity of 255, you will not be able to see the layers underneath. It is also important to keep in mind that a red layer on top of a blue layer looks different than a blue layer on top of a red layer. This is true for different color combinations, but these particular examples will turn out to be different shades of purple.</p>
+
+        <p>The riso object extends p5s built in Graphics object. You use it mostly the same way with a few exceptions, detailed below.</p>
+
+        <p>The following default colors are available: <span id="all-colors"></span></p>
       </div>
+
       <br>
 
       <div class="description" id="fill">
