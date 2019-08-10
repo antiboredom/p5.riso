@@ -1,7 +1,7 @@
 # Smudge
 
 Build up layers in the draw loop and click to export the print files when you think it's looking good!
-Run it with the p5 editor: [dither](https://editor.p5js.org/brain/sketches/i1gDFtMAI)
+[Run it with the p5 editor](https://editor.p5js.org/brain/sketches/i1gDFtMAI)
 
 ```javascript
 let blue, red, yellow;

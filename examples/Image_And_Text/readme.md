@@ -1,7 +1,7 @@
 # Image and Text
 
 This sketch splits an image into multiple channels and overlays text.
-Run it with the p5 editor: [dither](https://editor.p5js.org/brain/sketches/wLGAPKEMk)
+[Run it with the p5 editor](https://editor.p5js.org/brain/sketches/wLGAPKEMk)
 
 ```javascript
 let blue, red;
