@@ -1,4 +1,5 @@
 # Cutout
+Run it with the p5 editor: [cutout](https://editor.p5js.org/brain/sketches/GpuJH1Zur)
 
 ```javascript
 let blue;
