@@ -1,6 +1,6 @@
 # Dither
 
-This sketch uses p5.riso's dither function to create different effects on a single color channel.
+This sketch uses p5.riso's dither function to create different effects on a single color channel.  
 [Run it with the p5 editor](https://editor.p5js.org/brain/sketches/hU0ANATF-)
 
 ```javascript

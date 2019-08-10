@@ -207,7 +207,7 @@
         </code></pre>
 
         <p>Here we create a blue color layer, set it's fill to be 128 (or half opacity) and then draw a rectangle in it.</p>
-        <p>The order which you create colors layers affects the composition of the canvas and how colors mix. If your top layer (created last) has opacity of 255, you will not be able to see the layers underneath. Different color combination may result in different blended colors.</p>
+        <p>Pay attention to the order that you create each Riso object (each color layer). The drawRiso() function that previews your sketch, will display the layers in the order they are created, with the last created layer on top.  Note that if your top layer has an opacity of 255, you may not be able to see the layers underneath. Different color combination may result in different blended colors.</p>
 
         <p>The following default colors are available: <span id="all-colors"></span></p>
       </div>

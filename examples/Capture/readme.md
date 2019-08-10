@@ -1,6 +1,6 @@
 # Capture
 
-This sketch uses p5.dom's video capture function, and p5.riso's extractRGB function to create a 2-channel print with a webcam.
+This sketch uses p5.dom's video capture function, and p5.riso's extractRGB function to create a 2-channel print with a webcam.  
 [Run it with the p5 editor](https://editor.p5js.org/brain/sketches/pdl2eG240)
 
 ```javascript
