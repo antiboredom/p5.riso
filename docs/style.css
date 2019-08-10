@@ -148,6 +148,9 @@ a {
   /*    position: absolute;
     right: 60px;
 */
+  display: block;
+  max-width: 100%;
+  margin-top: 0px;
   margin-bottom: -80px;
 }
 
@@ -459,6 +462,10 @@ idea behind it:
 
   #title_start, #title_ex, #title_ref, #title_credits {
     margin-left: 0;
+  }
+  .nav-wrapper ul {
+    padding: 0;
+    margin: 0;
   }
   .nav-wrapper li {
     display: inline;
