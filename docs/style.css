@@ -8,6 +8,10 @@ body {
   font-family: Georgia, sans-serif;
 }
 
+a {
+  color: rgb(0, 120, 191);
+}
+
 .section {
   display: inline-block;
 }

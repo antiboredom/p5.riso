@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>p5.riso</title>
   <link rel="stylesheet" href="prism.css">
   <link rel="stylesheet" href="style.css">
@@ -12,7 +13,6 @@
 
   <nav class="nav-wrapper">
     <ul>
-      <!-- <li><img id="icon" src="assets/p5.Riso.gif"></li> -->
       <li><a href="#get" id="C">Get Started</a></li>
       <li><a href="#ex" id="Y">Examples</a></li>
       <li><a href="#ref" id="M">Reference</a></li>
@@ -29,11 +29,10 @@
 
     <div id="get">
       <p id="title_start">Get Started</p>
-      <!--                 <img src="marilyn-warhol-cyan.jpg" alt="Marilyn by Warhol"> -->
       <div class="text1">
         <h3>What & Why</h3>
         <p>p5.Riso.js is a p5.js library for generating files suitable for Risograph printing. It helps turn your sketches into multi-color prints.</p>
-          <p>A Risograph is sort of like a photocopier combined with a screen printer. Just like in screen printing, it prints one color at a time, each as a separate layer. To prepare digital files for riso printing, images need to be separated into individual colors, each saved out as a file. The p5.Riso Library has been created to help automate color separation and to make it possible to turn your interactive p5 sketches into print art.
+          <p>A <a href="https://en.wikipedia.org/wiki/Risograph">Risograph</a> is sort of like a photocopier combined with a screen printer. Just like in screen printing, it prints one color at a time, each as a separate layer. To prepare digital files for riso printing, images need to be separated into individual colors, each saved out as a file. The p5.Riso Library has been created to help automate color separation, show a preview of how your prints will look. It makes it possible to turn your interactive p5 sketches into print art!
         </p>
         <h3>Installation</h3>
         <h4>Local</h4>
@@ -66,22 +65,9 @@
 
         <div class="riso-example">
           <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Image_And_Text">
-            <img src="assets/claire.jpg">
+            <img src="assets/claire.gif">
           </a>
         </div>
-
-        <div class="riso-example">
-          <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Image_And_Text">
-            <img src="assets/claire-red.jpg">
-          </a>
-        </div>
-
-        <div class="riso-example">
-          <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Image_And_Text">
-            <img src="assets/claire-blue.jpg">
-          </a>
-        </div>
-
         <div class="riso-example">
           <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Smudge">
             <img src="assets/smudge1.jpg">
@@ -105,6 +91,8 @@
             <img src="assets/dither2.jpg">
           </a>
         </div>
+
+        <p>See <a href="https://github.com/antiboredom/p5.riso/blob/master/additional_examples.md">additional examples here</a>.</p>
 
 
         <!-- FIRST ROW -->
@@ -175,8 +163,9 @@
         <div><a href="#nostroke">risoNoStroke()</a></div>
         <div><a href="#clearRiso">clearRiso()</a></div>
         <div><a href="#image">Riso.image()</a></div>
-        <div><a href="#cutout">cutout()</a></div>
+        <div><a href="#cutout">Riso.cutout()</a></div>
         <div><a href="#channel">extractRGBChannel()</a></div>
+        <div><a href="#channelCMYK">extractCMYKChannel()</a></div>
         <div><a href="#drawRiso">drawRiso()</a></div>
         <div><a href="#expRiso">exportRiso()</a></div>
       </div>
@@ -195,15 +184,17 @@
 
         <p>Internally, the riso object extends p5s built in <a href="https://p5js.org/reference/#/p5/createGraphics">graphics object</a>. You use it mostly the same way with a few exceptions, as detailed in this documentation.</p>
 
-<pre><code class="language-javascript">let blueChannel;
+        <pre><code class="language-javascript">
+          let blueChannel; //declare riso object
 
-function setup(){
-  createCanvas(500, 500);
-  blueChannel = new Riso("blue");
-  blueChannel.fill(128);
-  blueChannel.rect(20, 20, 100, 100);
-  drawRiso();
-}</code></pre>
+          function setup(){
+            createCanvas(500, 500);
+            blueChannel = new Riso("blue"); // instantiate riso object as blue layer
+            blueChannel.fill(128); //set opacity
+            blueChannel.rect(20, 20, 100, 100); //draw rect to blue layer
+            drawRiso(); //draw to screen
+          }
+        </code></pre>
 
         <p>Here we create a blue color layer, set it's fill to be 128 (or half opacity) and then draw a rectangle in it.</p>
         <p>The order which you create colors layers affects the composition of the canvas and how colors mix. If your top layer (created last) has opacity of 255, you will not be able to see the layers underneath. Different color combination may result in different blended colors.</p>
@@ -218,10 +209,10 @@ function setup(){
         <pre><code class="language-javascript">
           function setup(){
             createCanvas(500, 500);
-            let blueChannel = new Riso("blue");
+            let blueChannel = new Riso("blue"); //create riso object, set to blue
 
-            blueChannel.fill(255); // completely opaque
-            blueChannel.ellipse(0, 0, 100, 100);
+            blueChannel.fill(255); // completely opaque 
+            blueChannel.ellipse(0, 0, 100, 100); //draw ellipse on blue layer
 
             blueChannel.fill(50); // fairly transparent
             blueChannel.ellipse(50, 50, 100, 100);
@@ -269,23 +260,9 @@ function setup(){
         <pre><code class="language-javascript">clearRiso();</code></pre>
       </div>
 
-<!--       <div class="description" id="draw"> -->
-<!--         <h3>Riso.draw();</h3> -->
-<!--         <p>Draws an individual riso channel on the screen. Should be used at the end of your draw loop or setup.</p> -->
-<!--  -->
-<!-- <pre><code class="language&#45;javascript">function setup(){ -->
-<!--   createCanvas(500, 500); -->
-<!--  -->
-<!--   let orange = new Riso("orange"); -->
-<!--   orange.fill(255); // completely opaque -->
-<!--   orange.ellipse(0, 0, 100, 100); -->
-<!--   orange.draw(); -->
-<!-- }</code></pre> -->
-<!--       </div> -->
-
       <div class="description" id="image">
         <h3>Riso.image(img, x, y, width, height);</h3>
-        <p>Draws an image onto a riso layer. Acts just like p5's image function, but removes color. Use fill to set the opacity of the image.</p>
+        <p>Draws an image onto a riso layer. Acts just like p5's image function, but converts the image to greyscale. It will then print in the color of the layer it is drawn on. Use fill to set the opacity of the image.</p>
         <ul>
           <li><b>img:</b> a p5 image, video or graphics object</li>
           <li><b>x:</b> x-coordinate of image</li>
@@ -315,19 +292,20 @@ function setup(){
 
       <div class="description" id="cutout">
         <h3>Riso.cutout(p5.Graphic);</h3>
-        <p>Cuts out portions of a risograph layer using fill values from a p5.Graphics object or another riso layer. This is useful so that two channels don't overlap.</p>
+        <p>This function is the inversion of <a href="https://p5js.org/reference/#/p5.Image/mask">the mask function</a>. It removes (or masks) portions of one layer that overlap with another layer or graphics object. This is useful for printing in layers when you don't want overlapping colors.</p>
 
         <pre><code class="language-javascript">
           function setup(){
             createCanvas(500, 500);
 
-            let blue = new Riso("blue");
-            let red = new Riso("red");
+            let blue = new Riso("blue"); //blue layer
+            let red = new Riso("red"); //red layer
 
             blue.ellipse(0, 0, 100, 100);
             red.ellipse(0, 0, 150, 150);
 
-            //completely removes overlaps between blue and red
+            //completely removes any intersection of red and blue 
+            //layers from the blue layer
             blue.cutout(red);
             drawRiso();
           }
@@ -336,7 +314,7 @@ function setup(){
 
       <div class="description" id="channel">
         <h3>extractRGBChannel(img, channel);</h3>
-        <p>Extracts a red, blue or green color channel from an image, and saves as a new image. Takes in two parameters:</p>
+        <p>Extracts a red, blue or green color channels from an image, and saves as a new image. Takes in two parameters:</p>
         <ul>
           <li><b>img:</b> a p5 image object</li>
           <li><b>channel:</b> the channel to extract. Can either be a channel name ("red", "green", or "blue") or number (0, 1, 2) </li>
@@ -356,11 +334,44 @@ function setup(){
             let blue = new Riso("blue");
             let red = new Riso("red");
 
-            let justBlues = extractRGBChannel(img, "blue");
-            let justReds = extractRGBChannel(img, "red");
+            let justBlues = extractRGBChannel(img, "blue"); //extract blue from img
+            let justReds = extractRGBChannel(img, "red"); //extract red from img
 
-            blue.draw(justBlues);
-            red.draw(justReds);
+            blue.draw(justBlues); //draw justblues to blue layer
+            red.draw(justReds); //draw justred to red layer
+
+            drawRiso();
+          }
+        </code></pre>
+      </div>
+
+       <div class="description" id="channelCMYK">
+        <h3>extractCMYKChannel(img, channel);</h3>
+        <p>Extracts a cyan, magneta, yellow or black color channels from an image, and saves as a new image. Takes in two parameters:</p>
+        <ul>
+          <li><b>img:</b> a p5 image object</li>
+          <li><b>channel:</b> the channel to extract. Can either be a channel name ("cyan", "magenta", "yellow", "black") or number (0, 1, 2, 3) </li>
+        </ul>
+
+        <pre><code class="language-javascript">
+          // convert a color image into a cyan and magenta print
+          let img;
+
+          function preload() {
+            img = loadImage('cat.jpg')
+          }
+
+          function setup(){
+            createCanvas(500, 500);
+
+            let blue = new Riso("blue");
+            let red = new Riso("red");
+
+            let justCyan = extractCMYKChannel(img, "cyan"); //extract cyan from img
+            let justMagenta = extractCMYKChannel(img, "magenta"); //extract magenta from img
+
+            blue.draw(justCyan); //draw justCyan to blue layer
+            red.draw(justMagenta); //draw justMagenta to red layer
 
             drawRiso();
           }
@@ -369,7 +380,7 @@ function setup(){
 
       <div class="description" id="drawRiso">
         <h3>drawRiso();</h3>
-        <p>Draws all Riso objects/layers to the screen. Should be used at the end of your draw or setup functions.</p>
+        <p>Draws all Riso objects/layers to the screen. Should be used at the end of your draw or setup functions. Useful for previewing what your prints will look like.</p>
 
         <pre><code class="language-javascript">
           function setup(){
@@ -377,22 +388,22 @@ function setup(){
 
             let colors = ["red", "blue", "green", "black"];
             for (let i = 0; i < colors.length; i++) {
-              let channel = new Riso(colors[i]);
+              let channel = new Riso(colors[i]); //create four color channels from array
               channel.fill(random(100, 200));
-              channel.ellipse(random(0, width), random(0, height), 100, 100);
+              channel.ellipse(random(0, width), random(0, height), 100, 100); //put a random ellipse on each
             }
 
-            drawRiso();
+            drawRiso(); //preview on screen
           }
         </code></pre>
       </div>
 
       <div class="description" id="expRiso">
         <h3>exportRiso();</h3>
-        <p>Exports all riso layers as individual png files. You should call this function in an event listener like mousePressed, or at the end of your setup function.</p>
+        <p>Use this function when you are ready to print. It exports all riso layers as individual png files, that can be printed in different ink colors. You should call this function in an event listener like mousePressed, or at the end of your setup function.</p>
 
         <pre><code class="language-javascript">
-          let blue;
+          let blue; 
           let red;
 
           function setup(){
@@ -403,17 +414,17 @@ function setup(){
           }
 
           function draw() {
-            clearRiso();
+            clearRiso(); //clear screen every loop of draw
 
-            blue.fill(map(mouseX, 0, width, 0, 255));
-            red.fill(map(mouseY, 0, height, 0, 255));
+            blue.fill(map(mouseX, 0, width, 0, 255)); //set blue fill by mouse position
+            red.fill(map(mouseY, 0, height, 0, 255)); //set red fill by mouse position
 
-            blue.ellipse(200, 200, 100, 100);
-            red.ellipse(250, 250, 100, 100);
+            blue.ellipse(200, 200, 100, 100); //draw ellipse to blue layer
+            red.ellipse(250, 250, 100, 100); //draw ellipse to red layer
           }
 
-          function mousePressed() {
-            exportRiso();
+          function mousePressed() { //when mouse is pressed
+            exportRiso(); //export red and blue layers as pngs for printing
           }
         </code></pre>
       </div>
@@ -426,7 +437,7 @@ function setup(){
     <div id="credits">
       <p id="title_credits">Credits</p>
       <div class="text1">
-        <p>p5.Riso was created by Sam Lavigne and Tega Brain. This website and most examples are by Crystal Chen and Paolla Bruno Dutra.</p>
+        <p>p5.Riso was created by <a href="http://lav.io/">Sam Lavigne</a> and <a href="http://tegabrain.com/">Tega Brain</a> with web design and contributions from <a href="https://github.com/CRYSTALMINYICHEN">Crystal Chen</a> and <a href="https://paollabd.github.io/">Paolla Bruno Dutra.</a></p>
       </div>
     </div>
   </div>
