@@ -471,6 +471,7 @@ idea behind it:
     display: inline;
     padding: 0px;
   }
-  .nav-wrapper li a {
+  .nav-wrapper a {
+    padding: 0px;
   }
 }
