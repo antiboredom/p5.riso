@@ -107,9 +107,16 @@
           </a>
         </div>
         <div class="riso-example">
-            <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Dither-test">
+          <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Dither-test">
             <img src="assets/dither-test.jpg">
           </a>
+        </div>
+
+        <div class="riso-example">
+          <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/CMYK-Compression">
+            <img src="assets/cmyk_compression_sloan.jpg">
+          </a>
+          <p>Example and print by Robin Sloan</p>
         </div>
 
         <p>See <a href="https://github.com/antiboredom/p5.riso/blob/master/additional_examples.md">additional examples here</a>. Let us know if you make prints with p5.riso and we will add your work to the gallery.</p>
@@ -231,7 +238,7 @@
             createCanvas(500, 500);
             let blueChannel = new Riso("blue"); //create riso object, set to blue
 
-            blueChannel.fill(255); // completely opaque 
+            blueChannel.fill(255); // completely opaque
             blueChannel.ellipse(0, 0, 100, 100); //draw ellipse on blue layer
 
             blueChannel.fill(50); // fairly transparent
@@ -324,7 +331,7 @@
             blue.ellipse(0, 0, 100, 100);
             red.ellipse(0, 0, 150, 150);
 
-            //completely removes any intersection of red and blue 
+            //completely removes any intersection of red and blue
             //layers from the blue layer
             blue.cutout(red);
             drawRiso();
@@ -367,10 +374,10 @@
 
        <div class="description" id="channelCMYK">
         <h3>extractCMYKChannel(img, channel);</h3>
-        <p>Extracts a cyan, magneta, yellow or black color channels from an image, and saves as a new image. Takes in two parameters:</p>
+        <p>Extracts the cyan, magneta, yellow and/or black color channels from an image, and saves as a new image. Takes in two parameters:</p>
         <ul>
           <li><b>img:</b> a p5 image object</li>
-          <li><b>channel:</b> the channel to extract. Can either be a channel name ("cyan", "magenta", "yellow", "black") or number (0, 1, 2, 3) </li>
+          <li><b>channel:</b> the channel(s) to extract. Can either be a channel name ("cyan", "magenta", "yellow", "black") or number (0, 1, 2, 3) or channel set string ("cy", "mk", "cyk")</li>
         </ul>
 
         <pre><code class="language-javascript">
@@ -399,7 +406,7 @@
       </div>
       <div class="description" id="dither">
               <h3>ditherImage(img, type, threshold);</h3>
-              <p>Reduces an image to one color using patterns of dots to create greys.</p> 
+              <p>Reduces an image to one color using patterns of dots to create greys.</p>
               <p>Takes three parameters. The first is the image object. the second is the dither type (choose between atkinson, floydsteinberg, bayer or none). The third sets the threshold (it only applies to bayer and none). Dither type 'none' simply applies a threshold, turning pixels above and below the threshold clear and black.</p>
 
               <pre><code class="language-javascript">
@@ -462,7 +469,7 @@
         <p>Use this function when you are ready to print. It exports all riso layers as individual png files, that can be printed in different ink colors. You should call this function in an event listener like mousePressed, or at the end of your setup function.</p>
 
         <pre><code class="language-javascript">
-          let blue; 
+          let blue;
           let red;
 
           function setup(){

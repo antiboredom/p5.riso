@@ -449,6 +449,13 @@ idea behind it:
   display: block;
 }
 
+.riso-example p {
+  margin: 0;
+  font-size: 0.8em;
+  color: #999;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .text1, .text2, .description {
     margin: auto;
