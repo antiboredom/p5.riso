@@ -102,6 +102,15 @@ a {
   margin-left: 185px;
 }
 
+#title_trouble {
+  background-color: rgb(61, 85, 136);
+  width: 150px;
+  padding: 10px;
+  font-size: 22px;
+  color: white;
+  margin-left: 185px;
+}
+
 #title_credits {
   background-color: rgb(0, 0, 0);
   width: 100px;
