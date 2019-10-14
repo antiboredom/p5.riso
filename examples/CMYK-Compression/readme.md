@@ -4,7 +4,6 @@ This sketch uses p5.dom's video capture function to demonstrates the "channel co
 
 (Thanks to [Max Stadnik](https://maxstadnik.com/) for the channel compression technique!)
 
-[Run it with the p5 editor](https://editor.p5js.org/brain/sketches/pdl2eG240)
 
 ```javascript
 let warmLayer;
