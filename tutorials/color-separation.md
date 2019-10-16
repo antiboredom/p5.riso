@@ -2,8 +2,8 @@
 
 Color images can be printed by seperating different color channels, and printing the color data from each channels as a separate layer. The following two functions enable you two extract color channels from an image. This data can then be copied to the riso objects for each color layer.
 
-⋅⋅*[extractRGBChannel(img, channel);](https://antiboredom.github.io/p5.riso/#channel)
-⋅⋅*[extractCMYKChannel(img, channel);](https://antiboredom.github.io/p5.riso/#channelCMYK)
+* [extractRGBChannel(img, channel);](https://antiboredom.github.io/p5.riso/#channel)  
+* [extractCMYKChannel(img, channel);](https://antiboredom.github.io/p5.riso/#channelCMYK)  
 
 Here is an example for a two color print in blue and red. It takes a color image and uses the extractRGBChannel() function to extract the reds and blues from an image. It copies this data to the red and blue riso object for printing.  
 
