@@ -2,6 +2,8 @@
 
 Set up a [base riso object](https://antiboredom.github.io/p5.riso/#riso) for each color you want to print with.  It's constructor can take 3 parameters, the color, width and height. When called with just the one parameter for color, it will default to the canvas width and height.
   
+The color parameter can be a string that is the name of the [riso ink color](http://stencil.wiki/colors) you want to print with. So for example: yellow = Riso('yellow') will create an object that will be previewed on screen at the RGB values of that ink type.  
+    
 This example prepares an image with black and yellow layers:  
 
 ```javascript
@@ -13,15 +15,11 @@ function setup() {
   black = new Riso('black');
   yellow = new Riso('yellow');
 }
-
-
 ```
-The color parameter can be a string that is the name of the [riso ink color](http://stencil.wiki/colors) you want to print with. So for example: yellow = Riso('yellow') will create an object that will be previewed on screen at the RGB values of that ink type.  
   
 Now that we have an object setup for our black and yellow layers, we can draw graphic elements to each. This code is added to setup and draws an ellipse on the black and an overlapping ellipse on the yellow layer:  
 
 ```javascript
-
   background(255); //set the on screen background to be white
 
   black.fill(255); // set fill on the black layer to be fully opaque
@@ -29,10 +27,9 @@ Now that we have an object setup for our black and yellow layers, we can draw gr
 
   yellow.fill(255);
   yellow.ellipse(400, height / 2, 300, 300);
-
   ```
 
-But in the overlapping area of the ellipses we don't want both color inks. We only want this area to have black ink and so we can use the [cutout()](https://antiboredom.github.io/p5.riso/#cutout) function to cut out the overlapping yellow from the black layer:  
+But in the overlapping area of the ellipses we don't want both ink colors to print over the top of one another. We only want this area to have black ink and so we can use the [cutout()](https://antiboredom.github.io/p5.riso/#cutout) function to cut out the overlapping yellow from the black layer:  
 
 ```javascript
   black.cutout(yellow); // cut yellow out of black
@@ -60,7 +57,7 @@ Now that we have the text we want to use, let's cut it out from the black layer:
 
 The second line above is the [drawRiso()](https://antiboredom.github.io/p5.riso/#drawRiso) function. This function will draw each layer onto the screen to show a preview of how your print will look. Ususally you'd call this from the end of setup or draw.   
   
-Now we have finished writing our code in setup, the last thing to do is to use the [exportRiso()](https://antiboredom.github.io/p5.riso/#expRiso) function to export our color layers as greyscale images for printing. It's best to use this function within a mouseClicked event function or in a keyPressed event function so that it will only export your files when either of these events occurs.   
+Now we have finished writing our code in setup, the last thing to do is to use the [exportRiso()](https://antiboredom.github.io/p5.riso/#expRiso) function to export our color layers as greyscale images for printing. It's best to use this function within a mouseClicked() event function or in a keyTyped() event function so that it will only export your files when either of these events occurs.   
   
 Under draw (which is empty). Let's add in a mouseClicked event function:  
 
