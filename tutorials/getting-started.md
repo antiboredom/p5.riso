@@ -70,6 +70,5 @@ function mouseClicked() {
 
 Now when the mouse is clicked, all of our print files will export as pngs. Each can be used to make a master on the printer.  
 
-
 Here is the [complete code described in this example.](https://editor.p5js.org/brain/sketches/GpuJH1Zur)
-
+Here is the [print we made.](https://github.com/antiboredom/p5.riso/blob/master/docs/assets/cutout.jpg)
