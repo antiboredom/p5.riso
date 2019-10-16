@@ -38,7 +38,7 @@ But in the overlapping area of the ellipses we don't want both ink colors to pri
 Now let's add some text also using the cutout function. First let's create an object to contain the text:   
 
 ```javascript
-  let textGraphic = createGraphics(width, height); //create graphics object
+  let textGraphic = createGraphics(width, height); //create new graphics object for text
   textGraphic.fill(0); //make fill 0
   textGraphic.textStyle(BOLD); //style text
   textGraphic.textFont('Arial');

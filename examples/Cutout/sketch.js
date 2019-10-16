@@ -1,21 +1,21 @@
-let blue;
-let red;
+let black;
+let yellow;
 
 function setup() {
   createCanvas(600, 600);
-  red = new Riso('red');
-  blue = new Riso('blue');
-}
-
-function draw() {
+  yellow = new Riso('yellow');
+  black = new Riso('black');
+  
   background(220);
   clearRiso();
 
-  blue.fill(255);
-  blue.ellipse(200, height / 2, 300, 300);
+  black.fill(255);
+  black.ellipse(200, height / 2, 300, 300);
 
-  red.fill(255);
-  red.ellipse(400, height / 2, 300, 300);
+  yellow.fill(255);
+  yellow.ellipse(400, height / 2, 300, 300);
+  
+  yellow.cutout(black); // cut black out of yellow
 
   let textGraphic = createGraphics(width, height);
   textGraphic.fill(0);
@@ -25,11 +25,13 @@ function draw() {
   textGraphic.textSize(20);
   textGraphic.text('P5.RISO', width / 2 + 5, height / 2);
 
-  red.cutout(textGraphic); // cut text out of red
-  blue.cutout(textGraphic); // cut text out of blue
-  red.cutout(blue); // cut blue out of red
+  black.cutout(textGraphic); // cut text out of black
 
   drawRiso();
+}
+
+function draw() {
+  
 }
 
 function mouseClicked() {
