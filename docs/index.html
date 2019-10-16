@@ -518,6 +518,7 @@
       <div class="text1">
         <h3>Getting started</h3>
         <p>This library will only work with the latest version of the p5.js library (release 0.9.0 onwards).</p>
+        <p>A note on image sizes: Set the pixel density of your sketches to 1, using the <a href="https://p5js.org/reference/#/p5/pixelDensity">pixelDensity function</a> in setup(). Else p5.riso will export your images at the default pixel density of your screen (for retina screens, this results in images coming out twice as large as what is set in CreateCanvas). With a pixel density of 1, the exported images will be sized with resolution of 72 dpi. Therefore an image of 600 pixels, will come out to be 600/72 = 8.3 inches wide. If you want to print your image at a higher resolution but smaller physical size, eg. at a dpi of 300, then you need to resize it using photoshop or a <a href="https://convert.town/image-dpi">tool like this one.</a></p>
       </div>
     </div>
       
