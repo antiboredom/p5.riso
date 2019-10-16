@@ -59,4 +59,6 @@ function mousePressed() { //when mouse is pressed
 ```
 
 
+Here is the [complete code described in this example.](https://editor.p5js.org/brain/sketches/wLGAPKEMk)  
+Here is the [print we made](https://github.com/antiboredom/p5.riso/blob/master/docs/assets/claire.gif) from this code.  
 
