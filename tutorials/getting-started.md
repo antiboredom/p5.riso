@@ -4,7 +4,9 @@ Set up a [base riso object](https://antiboredom.github.io/p5.riso/#riso) for eac
   
 The color parameter can be a string that is the name of the [riso ink color](http://stencil.wiki/colors) you want to print with. So for example: yellow = Riso('yellow') will create an object that will be previewed on screen at the RGB values of that ink type.  
     
-This example prepares an image with black and yellow layers:  
+This example prepares an image with black and yellow layers. 
+
+We also have to set the pixelDensity to 1, else p5 defaults to setting the pixel density to whatever your screen is. For many retina screens this makes your image twice as large as what you specified in createCanvas(). 
 
 ```javascript
 let black;
@@ -12,6 +14,7 @@ let yellow;
 
 function setup() {
   createCanvas(600, 600);
+  pixelDensity(1);
   black = new Riso('black');
   yellow = new Riso('yellow');
 }
@@ -68,7 +71,9 @@ function mouseClicked() {
 }
 ```
 
-Now when the mouse is clicked, all of our print files will export as pngs. Each can be used to make a master on the printer.  
+Now when the mouse is clicked, all of our print files will export as pngs. Each can be used to make a master on the printer. 
+
+A note on image size: The exported images will be sized with resolution of 72 dpi. Therefore our image of 600 pixels, will come out to be 600/72 = 8.3 inches wide. If you want to print your image at a higher resolution but smaller physical size, eg. at a dpi of 300, then you need to resize it using photoshop or a [tool like this one](https://convert.town/image-dpi).
 
 Here is the [complete code described in this example.](https://editor.p5js.org/brain/sketches/GpuJH1Zur)  
 Here is the [print we made](https://github.com/antiboredom/p5.riso/blob/master/docs/assets/cutout.jpg) from this code.  
