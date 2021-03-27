@@ -379,11 +379,11 @@
             let blue = new Riso("blue");
             let red = new Riso("red");
 
-            let justBlues = extractRGBChannel(img, "blue"); //extract blue from img
-            let justReds = extractRGBChannel(img, "red"); //extract red from img
+            let justBlues = extractRGBChannel(img, "blue"); //extract blue from img and save as new image
+            let justReds = extractRGBChannel(img, "red"); //extract red from img and save as new image
 
-            blue.draw(justBlues); //draw justblues to blue layer
-            red.draw(justReds); //draw justred to red layer
+            blue.image(justBlues, 0, 0); //draw justblues to blue layer
+            red.image(justReds, 0, 0); //draw justred to red layer
 
             drawRiso();
           }
