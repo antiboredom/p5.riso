@@ -415,8 +415,8 @@
             let justCyan = extractCMYKChannel(img, "cyan"); //extract cyan from img
             let justMagenta = extractCMYKChannel(img, "magenta"); //extract magenta from img
 
-            blue.draw(justCyan); //draw justCyan to blue layer
-            red.draw(justMagenta); //draw justMagenta to red layer
+            blue.image(justCyan, 0, 0); //draw justCyan to blue layer
+            red.image(justMagenta, 0, 0); //draw justMagenta to red layer
 
             drawRiso();
           }
