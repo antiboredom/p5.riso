@@ -220,14 +220,14 @@
 
       <div class="description" id="riso">
         <h3>new Riso(color, width, height)</h3>
-        <p>The base Riso object is a <b>single-color p5 graphics object</b>. It's constructor can take 3 parameters:</p>
+        <p>The base Riso object is a <b>single-color p5 graphics object</b>. Its constructor can take 3 parameters:</p>
         <ul>
           <li><b>color:</b> a string set to a Risograph color like "brightred", "blue" or "orange", or an array with [r,g,b] values</li>
           <li><b>width:</b> the width of the riso canvas (optional - defaults to width of sketch)</li>
           <li><b>height:</b> the height of the riso canvas (optional - defaults to height of sketch)</li>
         </ul>
 
-        <p>Internally, the riso object extends p5s built in <a href="https://p5js.org/reference/#/p5/createGraphics">graphics object</a>. You use it mostly the same way with a few exceptions, as detailed in this documentation.</p>
+        <p>Internally, the riso object extends p5's built in <a href="https://p5js.org/reference/#/p5/createGraphics">graphics object</a>. You use it mostly the same way with a few exceptions, as detailed in this documentation.</p>
 
         <pre><code class="language-javascript">
           let blueChannel; //declare riso object
@@ -241,8 +241,8 @@
           }
         </code></pre>
 
-        <p>Here we create a blue color layer, set it's fill to be 128 (or half opacity) and then draw a rectangle in it.</p>
-        <p>Pay attention to the order that you create each Riso object (each color layer). The drawRiso() function that previews your sketch, will display the layers in the order they are created, with the last created layer on top.  Note that if your top layer has an opacity of 255, you may not be able to see the layers underneath. Different color combination may result in different blended colors.</p>
+        <p>Here we create a blue color layer, set its fill to be 128 (or half opacity) and then draw a rectangle in it.</p>
+        <p>Pay attention to the order that you create each Riso object (each color layer). The drawRiso() function that previews your sketch will display the layers in the order they are created, with the last created layer on top.  Note that if your top layer has an opacity of 255, you may not be able to see the layers underneath. Different color combination may result in different blended colors.</p>
 
         <p>The following default colors are available: <span id="all-colors"></span></p>
       </div>
@@ -425,7 +425,7 @@
       <div class="description" id="dither">
               <h3>ditherImage(img, type, threshold);</h3>
               <p>Reduces an image to one color using patterns of dots to create greys.</p>
-              <p>Takes three parameters. The first is the image object. the second is the dither type (choose between atkinson, floydsteinberg, bayer or none). The third sets the threshold (it only applies to bayer and none). Dither type 'none' simply applies a threshold, turning pixels above and below the threshold clear and black.</p>
+              <p>Takes three parameters. The first is the image object. The second is the dither type (choose between atkinson, floydsteinberg, bayer or none). The third sets the threshold (it only applies to bayer and none). Dither type 'none' simply applies a threshold, turning pixels above and below the threshold clear and black.</p>
 
               <pre><code class="language-javascript">
               let black;
