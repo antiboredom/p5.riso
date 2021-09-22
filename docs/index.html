@@ -214,6 +214,7 @@
         <div><a href="#dither">ditherImage()</a></div>
         <div><a href="#drawRiso">drawRiso()</a></div>
         <div><a href="#expRiso">exportRiso()</a></div>
+        <div><a href="#halftoneImage">halftoneImage()</a></div>
       </div>
 
       <br>
@@ -513,6 +514,27 @@
           }
         </code></pre>
       </div>
+
+    <div class="description" id="halftoneImage">
+      <h3>halftoneImage();</h3>
+      <p>Draws all Riso objects/layers to the screen. Should be used at the end of your draw or setup functions. Useful for previewing what your prints will look like.</p>
+
+        <pre><code class="language-javascript">
+          function setup(){
+            createCanvas(500, 500);
+
+            let colors = ["red", "blue", "green", "black"];
+            for (let i = 0; i < colors.length; i++) {
+              let channel = new Riso(colors[i]); //create four color channels from array
+              channel.fill(random(100, 200));
+              channel.ellipse(random(0, width), random(0, height), 100, 100); //put a random ellipse on each
+            }
+
+            drawRiso(); //preview on screen
+          }
+        </code></pre>
+    </div>
+
     </div>
     <div id="Troubleshooting">
       <p id="title_trouble">Troubleshooting</p>
