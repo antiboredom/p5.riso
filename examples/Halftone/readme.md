@@ -1,14 +1,14 @@
-# Dither
+# Halftone
 
-This sketch uses p5.riso's dither function to create different effects on a single color channel.  
-[Run it with the p5 editor](https://editor.p5js.org/brain/sketches/hU0ANATF-)
+This sketch uses p5.riso's halftone function to apply a halftone pattern to an image.  
+[Run it with the p5 editor](https://editor.p5js.org/rachelehyman/sketches/k3HBcRDXs)
 
 ```javascript
 let pink;
 let img;
 
 function preload() {
-  img = loadImage('data/no_threat.jpg');
+  img = loadImage('data/monkeys.jpg');
 }
 
 function setup() {
@@ -23,15 +23,11 @@ function draw() {
 
   clearRiso();
 
-  let halftoned = halftoneImage(img);
+  let halftoned = halftoneImage(img, 'line', 3, 45, 90);
 
   pink.image(halftoned, 0, 0);
 
   drawRiso();
-}
-
-function mouseClicked() {
-  // exportRiso();
 }
 ```
 

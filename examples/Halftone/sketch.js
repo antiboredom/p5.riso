@@ -17,7 +17,7 @@ function draw() {
 
   clearRiso();
 
-  let halftoned = halftoneImage(img, 'line', 3, 45, 127);
+  let halftoned = halftoneImage(img, 'line', 3, 45, 90);
 
   pink.image(halftoned, 0, 0);
 
