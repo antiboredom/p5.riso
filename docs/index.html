@@ -517,21 +517,33 @@
 
     <div class="description" id="halftoneImage">
       <h3>halftoneImage();</h3>
-      <p>Draws all Riso objects/layers to the screen. Should be used at the end of your draw or setup functions. Useful for previewing what your prints will look like.</p>
+      <p>Applies a halftone pattern to an image.
+
+      Takes up to five parameters. The first and only required parameter is the image object. The second is the shape of the dots (default value is a circle). The third is the frequency of dots, measured in lpi (lines per inch), with a default value of 10. The fourth one is the angle to rotate overlapping patterns to reduce interference (default value 45). The fifth parameter is intensity, which will dither the result at the given threshold (default value 127).</p>
 
         <pre><code class="language-javascript">
-          function setup(){
-            createCanvas(500, 500);
+              let pink;
+              let img;
 
-            let colors = ["red", "blue", "green", "black"];
-            for (let i = 0; i < colors.length; i++) {
-              let channel = new Riso(colors[i]); //create four color channels from array
-              channel.fill(random(100, 200));
-              channel.ellipse(random(0, width), random(0, height), 100, 100); //put a random ellipse on each
-            }
+              function preload() {
+                img = loadImage('data/monkeys.jpg');
+              }
 
-            drawRiso(); //preview on screen
-          }
+              function setup() {
+                pixelDensity(1);
+                createCanvas(img.width, img.height);
+                pink = new Riso('fluorescentpink'); // create pink layer
+              }
+
+              function draw() {
+                background(220);
+                clearRiso();
+
+                let halftoned = halftoneImage(img, 'line', 3, 45, 127); // pass image to halftone with line dots, frequency of 3, angle of 45, and intensity of 127.
+                pink.image(halftoned, 0, 0); // draw halftoned image
+
+                drawRiso();
+              }
         </code></pre>
     </div>
 
