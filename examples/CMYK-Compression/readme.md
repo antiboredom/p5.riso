@@ -1,6 +1,6 @@
 # Capture
 
-This sketch uses p5.dom's video capture function to demonstrates the "channel compression" option in p5.riso's extractCMYK function, in which multiple CMYK channels can be extracted into one Riso color layer. Once the webcam feed is running, you can click to toggle between two versions of the image and see the difference.
+This sketch uses p5.dom's video capture function to demonstrate the "channel compression" option in p5.riso's extractCMYK function, in which multiple CMYK channels can be extracted into one Riso color layer. Once the webcam feed is running, you can click to toggle between two versions of the image and see the difference.
 
 (Thanks to [Max Stadnik](https://maxstadnik.com/) for the channel compression technique!)
 

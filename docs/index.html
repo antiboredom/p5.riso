@@ -43,6 +43,7 @@
         <p>p5.Riso.js is a p5.js library for generating files suitable for Risograph printing. It helps turn your sketches into multi-color prints.</p>
           <p>A <a href="https://en.wikipedia.org/wiki/Risograph">Risograph</a> is sort of like a photocopier combined with a screen printer. Just like in screen printing, it prints one color at a time, each as a separate layer. To prepare digital files for riso printing, images need to be separated into individual colors, each saved out as a file. The p5.Riso Library helps automate color separation and lets you preview of how your prints will look. It makes it possible to turn your interactive p5 sketches into print art!
         </p>
+        <p><a href = "https://p5js.org/">p5.js</a> itself is a beginner-friendly JavaScript library for creative coding. It's based on the metaphor of a sketch, with the browser page being your whole canvas. If you're already familiar with the riso process, you can use p5.riso to preview how your prints might turn out.</p>
         <p>Full source and examples on <a href="https://github.com/antiboredom/p5.riso">GitHub</a>.</p>
         <h3>Installation</h3>
         <h4>Local</h4>
@@ -129,6 +130,11 @@
             <img src="assets/dither-test.jpg">
           </a>
         </div>
+        <div class="riso-example">
+          <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Halftone">
+            <img src="assets/halftone.png">
+          </a>
+        </div>
 
         <div class="riso-example">
           <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/CMYK-Compression">
@@ -213,6 +219,7 @@
         <div><a href="#dither">ditherImage()</a></div>
         <div><a href="#drawRiso">drawRiso()</a></div>
         <div><a href="#expRiso">exportRiso()</a></div>
+        <div><a href="#halftoneImage">halftoneImage()</a></div>
       </div>
 
       <br>
@@ -220,14 +227,14 @@
 
       <div class="description" id="riso">
         <h3>new Riso(color, width, height)</h3>
-        <p>The base Riso object is a <b>single-color p5 graphics object</b>. It's constructor can take 3 parameters:</p>
+        <p>The base Riso object is a <b>single-color p5 graphics object</b>. Its constructor can take 3 parameters:</p>
         <ul>
           <li><b>color:</b> a string set to a Risograph color like "brightred", "blue" or "orange", or an array with [r,g,b] values</li>
           <li><b>width:</b> the width of the riso canvas (optional - defaults to width of sketch)</li>
           <li><b>height:</b> the height of the riso canvas (optional - defaults to height of sketch)</li>
         </ul>
 
-        <p>Internally, the riso object extends p5s built in <a href="https://p5js.org/reference/#/p5/createGraphics">graphics object</a>. You use it mostly the same way with a few exceptions, as detailed in this documentation.</p>
+        <p>Internally, the riso object extends p5's built in <a href="https://p5js.org/reference/#/p5/createGraphics">graphics object</a>. You use it mostly the same way with a few exceptions, as detailed in this documentation.</p>
 
         <pre><code class="language-javascript">
           let blueChannel; //declare riso object
@@ -241,8 +248,8 @@
           }
         </code></pre>
 
-        <p>Here we create a blue color layer, set it's fill to be 128 (or half opacity) and then draw a rectangle in it.</p>
-        <p>Pay attention to the order that you create each Riso object (each color layer). The drawRiso() function that previews your sketch, will display the layers in the order they are created, with the last created layer on top.  Note that if your top layer has an opacity of 255, you may not be able to see the layers underneath. Different color combination may result in different blended colors.</p>
+        <p>Here we create a blue color layer, set its fill to be 128 (or half opacity) and then draw a rectangle in it.</p>
+        <p>Pay attention to the order that you create each Riso object (each color layer). The drawRiso() function that previews your sketch will display the layers in the order they are created, with the last created layer on top.  Note that if your top layer has an opacity of 255, you may not be able to see the layers underneath. Different color combination may result in different blended colors.</p>
 
         <p>The following default colors are available: <span id="all-colors"></span></p>
       </div>
@@ -425,7 +432,7 @@
       <div class="description" id="dither">
               <h3>ditherImage(img, type, threshold);</h3>
               <p>Reduces an image to one color using patterns of dots to create greys.</p>
-              <p>Takes three parameters. The first is the image object. the second is the dither type (choose between atkinson, floydsteinberg, bayer or none). The third sets the threshold (it only applies to bayer and none). Dither type 'none' simply applies a threshold, turning pixels above and below the threshold clear and black.</p>
+              <p>Takes three parameters. The first is the image object. The second is the dither type (choose between atkinson, floydsteinberg, bayer or none). The third sets the threshold (it only applies to bayer and none). Dither type 'none' simply applies a threshold, turning pixels above and below the threshold clear and black.</p>
 
               <pre><code class="language-javascript">
               let black;
@@ -512,12 +519,47 @@
           }
         </code></pre>
       </div>
+
+    <div class="description" id="halftoneImage">
+      <h3>halftoneImage();</h3>
+      <p>Applies a halftone pattern to an image.
+
+      Takes up to five parameters. The first and only required parameter is the image object. The second is the shape of the dots (default value is a circle). The third is the frequency of dots, measured in lpi (lines per inch), with a default value of 10. The fourth one is the angle to rotate overlapping patterns to reduce interference (default value 45). The fifth parameter is intensity, which will dither the result at the given threshold (default value 127).</p>
+
+        <pre><code class="language-javascript">
+              let pink;
+              let img;
+
+              function preload() {
+                img = loadImage('data/monkeys.jpg');
+              }
+
+              function setup() {
+                pixelDensity(1);
+                createCanvas(img.width, img.height);
+                pink = new Riso('fluorescentpink'); // create pink layer
+              }
+
+              function draw() {
+                background(220);
+                clearRiso();
+
+                let halftoned = halftoneImage(img, 'line', 3, 45, 90); // pass image to halftone with line dots, frequency of 3, angle of 45, and intensity of 90.
+                pink.image(halftoned, 0, 0); // draw halftoned image
+
+                drawRiso();
+              }
+        </code></pre>
+    </div>
+
     </div>
     <div id="Troubleshooting">
       <p id="title_trouble">Troubleshooting</p>
       <div class="text1">
         <h3>Getting started</h3>
         <p>This library will only work with the latest version of the p5.js library (release 0.9.0 onwards).</p>
+        <h3>Images don't show up</h3>
+        <p>Running riso.p5 locally requires you to run a <a href="https://github.com/processing/p5.js/wiki/Local-server">local web server</a> to work with image files. If you try to locally run any of the examples with images (such as <a href="https://github.com/antiboredom/p5.riso/tree/master/examples/Dither">Dither</a>), it will show the Loading... screen forever. Many text editors (like Sublime Text, Brackets, and VS Code) have plugins to run a server. You can also use a browser app like <a href ="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb/">Web Server for Chrome</a>. A third option is to use the <a href="https://editor.p5js.org">p5.js web editor</a>, which will let you upload image files if you log in.</p>
         <h3>Image sizes</h3> 
         <p>Set the pixel density of your sketches to 1, using the <a href="https://p5js.org/reference/#/p5/pixelDensity">pixelDensity function</a> in setup(). Else p5.riso will export your images at the default pixel density of your screen (for retina screens, this results in images coming out twice as large as what is set in CreateCanvas). With a pixel density of 1, the exported images will be sized with resolution of 72 dpi. Therefore an image of 600 pixels, will come out to be 600/72 = 8.3 inches wide. If you want to print your image at a higher resolution but smaller physical size, eg. at a dpi of 300, then you need to resize it using photoshop or a <a href="https://convert.town/image-dpi">tool like this one.</a></p>
       </div>
