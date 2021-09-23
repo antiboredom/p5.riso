@@ -23,8 +23,3 @@ function draw() {
 
   drawRiso();
 }
-
-function mouseClicked() {
-  // exportRiso();
-}
-
