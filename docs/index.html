@@ -353,14 +353,17 @@
             let blue = new Riso("blue"); //blue layer
             let red = new Riso("red"); //red layer
 
-            blue.ellipse(0, 0, 100, 100);
-            red.ellipse(0, 0, 150, 150);
+            blue.fill(255); 
+            blue.ellipse(130, 130, 100, 100);
+            red.fill(255); 
+            red.textSize(100);
+            red.text("hello",50, 170);
 
             //completely removes any intersection of red and blue
-            //layers from the blue layer
+             //layers from the blue layer
             blue.cutout(red);
             drawRiso();
-          }
+            }
         </code></pre>
       </div>
 
