@@ -216,6 +216,7 @@
         <div><a href="#cutout">Riso.cutout()</a></div>
         <div><a href="#channel">extractRGBChannel()</a></div>
         <div><a href="#channelCMYK">extractCMYKChannel()</a></div>
+        <div><a href="#extractMapped">extractMappedChannels()</a></div>
         <div><a href="#dither">ditherImage()</a></div>
         <div><a href="#drawRiso">drawRiso()</a></div>
         <div><a href="#expRiso">exportRiso()</a></div>
@@ -427,6 +428,40 @@
 
             blue.image(justCyan, 0, 0); //draw justCyan to blue layer
             red.image(justMagenta, 0, 0); //draw justMagenta to red layer
+
+            drawRiso();
+          }
+        </code></pre>
+      </div>
+       <div class="description" id="extractMapped">
+        <h3>extractMappedChannels(img, step=0.1);</h3>
+        <p>Attempts to map colors from an input image to your riso color layers. Returns an array of images, each corresponding to a riso layer. The function takes two parameters:</p>
+        <ul>
+          <li><b>img:</b> a p5 image object</li>
+          <li><b>steps:</b> (optional!) a number between 0.01 and 0.5 representing how accurate the mapping should be. Lower number is more accurate. Beware that setting this low may result in out of memory errors.</li>
+        </ul>
+
+        <pre><code class="language-javascript">
+          let layer1;
+          let layer2;
+
+          let img;
+
+          function preload() {
+            img = loadImage("data/no_threat.jpg");
+          }
+
+          function setup() {
+            pixelDensity(1);
+            createCanvas(img.width, img.height);
+
+            layer1 = new Riso("orange");
+            layer2 = new Riso("green");
+
+            let images = extractMappedChannels(img, 0.05);
+
+            layer1.image(images[0], 0, 0);
+            layer2.image(images[1], 0, 0);
 
             drawRiso();
           }
