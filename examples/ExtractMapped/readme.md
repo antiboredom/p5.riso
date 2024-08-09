@@ -1,4 +1,4 @@
-# Dither
+# Extract Mapped
 
 This sketch uses p5.riso's extractMappedChannels function. The function attempts to map colors from an input image onto riso layers.
 
