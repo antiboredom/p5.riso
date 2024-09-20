@@ -11,3 +11,4 @@ To do:
 - function to select like colored pixels (magic wand)
 - translate image color spaces
 - document CMYK channel compression function
+- video tutorials
