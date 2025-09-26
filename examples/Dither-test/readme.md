@@ -6,53 +6,48 @@ This sketch creates a test print to show different settings for p5.riso's dither
 ```javascript
 let black;
 let img;
-let s = 200; //image size
+let ditherTypes =['atkinson','floydsteinberg','bayer','none'];
+let s = 250;
+let gutter = 0.5 *72;
 
 function preload() {
-  img = loadImage('rosa.jpg');
+  img = loadImage('data/rosa.jpg');
 }
 
 function setup() {
   pixelDensity(1);
-  createCanvas(11 * 150, 8 * 150); //set for letter size paper
-  black = new Riso('black', 11 * 150, 8 * 150); //new riso object
+  createCanvas(8.5 * 150, 11.5 * 150);
+  black = new Riso('black', 8.5 * 150, 11.5 * 150);
 }
 
 
 function draw() {
 
-  for (var x = 1; x < 5; x = x + 1) { //iterate through each image
-    for (var y = 0; y < 5; y = y + 1) {
-      ditherTypes(x); //custom function to set dither types for each column
-      let dithered = ditherImage(img, ditherType, y * 50); //dither image
-      black.image(dithered, x * s, (black.height - 300) - y * s, s, s); //place it on black riso object
-      if (x == 1) {  //draw numbers next to first column of images
-        black.text(y * 50, x * s - 25, (black.height - 300) - y * s + 100, s, s);
+  clearRiso();
+  for (var x = 0; x < 4; x = x + 1) {
+    for (var y = 0; y < 4; y = y + 1) {
+      dithered = ditherImage(img, ditherTypes[x], (y+1) * 50); //dither img object
+      black.image(dithered, 2*gutter + x * s, 2*gutter+y * s, s, s); //draw image to black layer
+      if (x == 0) { //write numbers along first column
+        black.text((y+1)*50, gutter + x * s, 3*gutter+y * s, s, s);
 
       }
+
+
     }
   }
 
-  //text labels
-  black.text('atkinson', 200, 90);
-  black.text('floydsteinberg', 400, 90);
-  black.text('bayer', 600, 90);
-  black.text('none', 800, 90);
-  
-  drawRiso(); 
+  //draw dither labels
+  black.text('atkinson', 2* gutter + 0 * s, 2*gutter-20);
+  black.text('floydsteinberg', 2*gutter + 1 * s, 2*gutter-20);
+  black.text('bayer', 2*gutter + 2 * s, 2*gutter-20);
+  black.text('none', 2*gutter + s * 3, 2*gutter-20);
+  drawRiso();
   noLoop();
 }
 
 function mouseClicked() {
-  exportRiso(); //export print files when mouse clicked
-}
-
-//custom function to set dither types with number
-function ditherTypes(x) { 
-  if (x == 1) ditherType = 'atkinson';
-  else if (x == 2) ditherType = 'floydsteinberg';
-  else if (x == 3) ditherType = 'bayer';
-  else if (x == 4) ditherType = 'none';
+  exportRiso();
 }
 ```
 
