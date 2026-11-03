@@ -530,9 +530,11 @@
       </div>
 
       <div class="description" id="expRiso">
-        <h3>exportRiso();</h3>
+        <h3>exportRiso(threshold);</h3>
         <p>Use this function when you are ready to print. It exports all riso layers as individual png files, that can be printed in different ink colors. You should call this function in an event listener like mousePressed, or at the end of your setup function.</p>
-
+<ul>
+          <li><b>threshold:</b> (optional!) 0-255. On export, grey pixels become either black or white according to threshold. Exports a black and white image for printing rather than greyscale to avoid on-machine dithering. Gives more control over dither patterns.</li>
+        </ul>
         <pre><code class="language-javascript">
           let blue;
           let red;
